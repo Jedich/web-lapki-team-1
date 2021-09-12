@@ -38,3 +38,8 @@
     color: #6A85C3;
     background-color: white;
   }
+
+  .user_photo {
+  	width: 100px;
+  	height: 100px;
+  }
