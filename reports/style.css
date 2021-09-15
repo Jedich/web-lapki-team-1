@@ -42,3 +42,8 @@
   	width: 100px;
   	height: 100px;
   }
+
+  .content{
+    text-align: center;
+   font-size: 20px;
+  }
