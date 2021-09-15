@@ -6,3 +6,7 @@
     flex-flow: column wrap;
     align-items: center;
   }
+
+  .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #8ffff8 !important;
+}
