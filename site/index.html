@@ -1,85 +1,82 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>UkrAbobus</title>
-		<meta charset="utf-8" />
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
-			crossorigin="anonymous"
-		/>
-		<style>
-			table,
-			th,
-			td {
-				border: 1px solid black;
-				margin: 10px;
-				padding: 10px;
-			}
-		</style>
-	</head>
+<head>
+	<title>UkrAbobus</title>
+	<meta charset="utf-8" />
+	<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+	crossorigin="anonymous"
+	/>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+</head>
 
-	<body>
-		<nav class="navbar navbar-light bg-light">
-			<div class="container-fluid">
-				<a class="navbar-brand" style="padding: 0" href="#">
-					<img
-						src="logo.svg"
-						alt=""
-						width="160"
-						class="d-inline-block align-text-top"
-					/>
-					<!-- <span style="margin-left: 10px;">UkrAbobus</span> -->
-				</a>
+<body>
+	<nav class="navbar navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" style="padding: 0" href="#">
+				<img
+				src="logo.svg"
+				alt=""
+				width="160"
+				class="d-inline-block align-text-top"
+				/>
+				<!-- <span style="margin-left: 10px;">UkrAbobus</span> -->
+			</a>
+			<div class="about_us">
+				<h2><a href="">Про нас</a></h2>
 			</div>
-		</nav>
-		<h3 style="text-align: center; margin: 20px">Оберіть тип транспорту!</h3>
-		<form action="./approve.html">
-			<table style="margin: auto; margin-bottom: 10px">
-				<tr>
-					<th>Тип</th>
-					<th>Зображення</th>
-					<th>Обрати</th>
-				</tr>
-				<tr>
-					<td>Потяг</td>
-					<td>
-						<img src="img/train.png" style="width: 700px" />
-					</td>
-					<td>
-						<input type="radio" id="html" name="trip" value="a" />
-					</td>
-				</tr>
-				<tr>
-					<td>Автобус</td>
-					<td>
-						<img src="img/bus.jpg" style="width: 700px" />
-					</td>
-					<td>
-						<input type="radio" id="html" name="trip" value="b" />
-					</td>
-				</tr>
-				<tr>
-					<td>Літак</td>
-					<td>
-						<img src="img/plane.jpg" style="width: 700px" />
-					</td>
-					<td>
-						<input type="radio" id="html" name="trip" value="c" />
-					</td>
-				</tr>
-			</table>
-			<input
-				type="submit"
-				value="Обрати!"
-				class="btn btn-success"
-				style="font-size: 30px;display: block;margin: 0 auto 10px;width: 885px;"
-			/>
-		</form>
-		<footer style="text-align: center; margin-bottom: 10px;">
-			<hr>
-			<i>©Copyright team1 IA-02 Inc. <a href="../reports/lab1.html">Посилання на звіт</a></i>
-		</footer>
-	</body>
+		</div>
+
+	</nav>
+	<h3 style="text-align: center; margin: 20px">Оберіть тип транспорту!</h3>
+	<form action="./approve.html">
+		<table style="margin: auto; margin-bottom: 10px">
+			<tr>
+				<th>Тип</th>
+				<th>Зображення</th>
+				<th>Обрати</th>
+			</tr>
+			<tr>
+				<td>Потяг</td>
+				<td>
+					<img src="img/train.png" style="width: 700px" />
+				</td>
+				<td>
+					<input type="radio" id="html" name="trip" value="a" />
+				</td>
+			</tr>
+			<tr>
+				<td>Автобус</td>
+				<td>
+					<img src="img/bus.jpg" style="width: 700px" />
+				</td>
+				<td>
+					<input type="radio" id="html" name="trip" value="b" />
+				</td>
+			</tr>
+			<tr>
+				<td>Літак</td>
+				<td>
+					<img src="img/plane.jpg" style="width: 700px" />
+				</td>
+				<td>
+					<input type="radio" id="html" name="trip" value="c" />
+				</td>
+			</tr>
+		</table>
+		<input
+		type="submit"
+		value="Обрати!"
+		class="btn btn-success"
+		style="font-size: 30px;display: block;margin: 0 auto 10px;width: 885px;"
+		/>
+	</form>
+	<footer style="text-align: center; margin-bottom: 10px;">
+		<hr>
+		<i>©Copyright team1 IA-02 Inc. <a href="../reports/lab1.html">Посилання на звіт</a></i>
+	</footer>
+</body>
 </html>
