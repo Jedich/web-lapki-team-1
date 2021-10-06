@@ -29,4 +29,15 @@ h2 > a {
 	color: green;
 }
 
+.center {
+  margin: auto;
+  width: 75%;
+  padding: 10px;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: center;
+}
 
