@@ -53,3 +53,7 @@ b+i{
 	width: 600px; 
 	border-radius: 1%;
 }
+
+.list1 {
+	list-style-image: linear-gradient(to left bottom, rgb(29, 150, 75), rgb(174, 201, 22));
+  }
