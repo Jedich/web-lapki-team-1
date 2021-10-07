@@ -1,90 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>
-		Звіти
-	</title>
-	<link rel="stylesheet" href="style.css">
-	<meta charset="utf-8">
+    <title>
+        Звіти
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <meta charset="utf-8">
 </head>
 <body>
-	<div class="header"><h1>
-		ЗВІТИ  З ЛАБОРАТОРНИХ РОБІТ
-		<br>З ДИСЦИПЛІНИ «РОЗРОБЛЕННЯ WEB-ЗАСТОСУВАНЬ»
-	</h1>
-	<h2>
-		Бригада №1, Студенти групи ІА-02
-		<br>Вавринюк М. П, <img class="user_photo" align="center" src="img/faces/Maks.jpg">
-		Лємєшова С. С, <img  class="user_photo" align="center" src="img/faces/Sophie.jpg">
-		Тітов Є. О, <img class="user_photo" align="center" src="img/faces/Egor.jpg">
-		Юдаков О. С. <img class="user_photo" align="center" src="img/faces/Oleksandr.jpg">
-	</h2>
+<div class="header"><h1>
+    ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ
+    <br>З ДИСЦИПЛІНИ «РОЗРОБЛЕННЯ WEB-ЗАСТОСУВАНЬ»
+</h1>
+    <h2>
+        Бригада №1, Студенти групи ІА-02
+        <br>Вавринюк М. П, <img class="user_photo" align="center" src="img/faces/Maks.jpg">
+        Лємєшова С. С, <img class="user_photo" align="center" src="img/faces/Sophie.jpg">
+        Тітов Є. О, <img class="user_photo" align="center" src="img/faces/Egor.jpg">
+        Юдаков О. С. <img class="user_photo" align="center" src="img/faces/Oleksandr.jpg">
+    </h2>
 </div>
 <div class="topnav">
-	<a class="active" href="lab1.html">Лаб№1</a>
-	<a href="lab2.html">Лаб№2</a>
-	<a href="lab3.html">Лаб№3</a>
-	<a href="lab4.html">Лаб№4</a>
-	<a href="lab5.html">Лаб№5</a>
-	<a href="lab6.html">Лаб№6</a>
-	<a href="lab7.html">Лаб№7</a>
-	<a href="lab8.html">Лаб№8</a>
-	<a href="lab9.html">Лаб№9</a>
-</div> 
-<div class="layout">
-	<div class="sidenav">
-		<a href="#description">Опис предметного середовища</a>
-		<a href="#topic_aim">Тема, мета та розташування лабораторної</a>
-		<a href="#structure">Структура</a>
-		<a href="#table">HTNL-код таблиці</a>
-		<a href="#form">HTNL-код форми</a>
-		<a href="#img">HTNL-код картинки</a>
-		<a href="#summary">Висновки</a>
-	</div>
-	<div style="margin: 20px;">
-		<div class="content">
-			<h2>ЛАБОРАТОРНА РОБОТА №1</h2>
-			<p id="description"><b>Опис предметного середовища:</b> Предметною областю є пересування Україною за допомогою різноманітних транспортів. UkrAbobus – створений нами застосунок, який дозволяє максимально спростити вашу подорож. Користувач в змозі обрати зручний для нього засіб пересування, комфортний час та маршрут. Перевага нашого застосунку полягає в комфортності та універсальності. </p>
-			Даний WEB-додаток дозволяє користувачам придбати квитки на зручний їм транспорт для здійснення подорожі по Україні. На вибір користувача є три транспорти: потяг, літак та автобус. На одному сайті Ви можете подивитись розклад для всіх цих типів транспортів та обрати найзручніший саме Вам.
+    <a class="active" href="lab1.html">Лаб№1</a>
+    <a href="lab2.html">Лаб№2</a>
+    <a href="lab3.html">Лаб№3</a>
+    <a href="lab4.html">Лаб№4</a>
+    <a href="lab5.html">Лаб№5</a>
+    <a href="lab6.html">Лаб№6</a>
+    <a href="lab7.html">Лаб№7</a>
+    <a href="lab8.html">Лаб№8</a>
+    <a href="lab9.html">Лаб№9</a>
+</div>
+<div id="primary-content-wrap" class="wrap clearfix">
+    <div class="primary-content">
+    	<div class="content">
+        <h2>ЛАБОРАТОРНА РОБОТА №1</h2>
+        <p id="description"><b>Опис предметного середовища:</b> Предметною областю є пересування Україною за допомогою
+            різноманітних транспортів. UkrAbobus – створений нами застосунок, який дозволяє максимально спростити вашу
+            подорож. Користувач в змозі обрати зручний для нього засіб пересування, комфортний час та маршрут. Перевага
+            нашого застосунку полягає в комфортності та універсальності. </p>
+        Даний WEB-додаток дозволяє користувачам придбати квитки на зручний їм транспорт для здійснення подорожі по
+        Україні. На вибір користувача є три транспорти: потяг, літак та автобус. На одному сайті Ви можете подивитись
+        розклад для всіх цих типів транспортів та обрати найзручніший саме Вам.
 
-			<p>Застосунок має наступний функціонал: перегляд розкладу потягів, автобусів та літаків придбання квитків
-			</p>
+        <p>Застосунок має наступний функціонал: перегляд розкладу потягів, автобусів та літаків придбання квитків
+        </p>
 
-			<ul>
-				<li>Перегляд розкладу:
-					<ol>
-						<li>Потягів</li>
-						<li>Літаків</li>
-						<li>Автобусів</li>
-					</ol>
-				</li>
-				<li>Придбання квитків:</li>
-				<ol>
-					<li>На потяг</li>
-					<li>На літак</li>
-					<li>На автобус</li>
-				</ol>
-			</ul>
+        <ul>
+            <li>Перегляд розкладу:
+                <ol>
+                    <li>Потягів</li>
+                    <li>Літаків</li>
+                    <li>Автобусів</li>
+                </ol>
+            </li>
+            <li>Придбання квитків:</li>
+            <ol>
+                <li>На потяг</li>
+                <li>На літак</li>
+                <li>На автобус</li>
+            </ol>
+        </ul>
 
-			<div class="content">
-				<p id="topic_aim"><b>Тема:</b> структура html-документа. вибір предметного галузі.</p>
+        
+            <p id="topic_aim"><b>Тема:</b> структура html-документа. вибір предметного галузі.</p>
 
-				<p><b>Мета:</b> придбати практичні навички роботи  з HTML-документом, таблицями,формами, зображеннями, посиланнями.
-				Створити шаблон звітного HTML-документом для відображення результатів роботи всіх лабораторних робіт.</p>
-				<p><b>Розташування лабораторної: </b><a href="https://github.com/Jedich/web-lapki-team-1/tree/master/site">GitHub</a>
+            <p><b>Мета:</b> придбати практичні навички роботи з HTML-документом, таблицями,формами, зображеннями,
+                посиланнями.
+                Створити шаблон звітного HTML-документом для відображення результатів роботи всіх лабораторних робіт.
+            </p>
+            <p><b>Розташування лабораторної: </b><a href="https://github.com/Jedich/web-lapki-team-1/tree/master/site">GitHub</a>
 
-					<a href="https://jedich.github.io/web-lapki-team-1/site/">Лабороторна робота №1</a></p>
-					<p id="structure"><b>Cтруктура документа:</b><br></b><img src="img/lab1/structure.JPG"></p>
-					<b id="table">Код таблиці:</b><br><img src="img/lab1/table.JPG">
-					<br><b>Скриншот таблиці</b><br> <img src="img/lab1/table_screen.JPG"></p>
-					<b id="form">Код форми:</b><br><img src="img/lab1/form.JPG"><br>
-					<b>Cкриншот форми:</b><br><img src="img/lab1/form_screen.JPG"><br>
-					<b id="img">Код зображення:</b> <br><img src="img/lab1/img.JPG"><br>
-					<b>Cкриншот зображення:</b><br> <img src="img/lab1/img_screen.JPG">
+                <a href="https://jedich.github.io/web-lapki-team-1/site/">Лабороторна робота №1</a></p>
+            <p id="structure"><b>Cтруктура документа:</b><br></b><img src="img/lab1/structure.JPG"></p>
+            <b id="table">Код таблиці:</b><br><img src="img/lab1/table.JPG">
+            <br><b>Скриншот таблиці</b><br> <img src="img/lab1/table_screen.JPG"></p>
+            <b id="form">Код форми:</b><br><img src="img/lab1/form.JPG"><br>
+            <b>Cкриншот форми:</b><br><img src="img/lab1/form_screen.JPG"><br>
+            <b id="img">Код зображення:</b> <br><img src="img/lab1/img.JPG"><br>
+            <b>Cкриншот зображення:</b><br> <img src="img/lab1/img_screen.JPG">
 
-					<p id="summary"><b>Висновки: </b>Протягом цієї лабораторної роботи ми придбали практичні навички роботи  з HTML-документом, навчилися створювати таблиці, форми, та вставляти картинки і посилання</p>
-				</div>
-			</div>
-		</div>
-	</body>
-	</html>
+            <p id="summary"><b>Висновки: </b>Протягом цієї лабораторної роботи ми придбали практичні навички роботи з
+                HTML-документом, навчилися створювати таблиці, форми, та вставляти картинки і посилання</p>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="floating-div">
+            <div class="sidenav">
+                <a href="#description">Опис предметного середовища</a>
+                <a href="#topic_aim">Тема, мета та розташування лабораторної</a>
+                <a href="#structure">Структура</a>
+                <a href="#table">HTNL-код таблиці</a>
+                <a href="#form">HTNL-код форми</a>
+                <a href="#img">HTNL-код картинки</a>
+                <a href="#summary">Висновки</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- .wrap -->
+<footer>
+    COPYRIGHT TEAM 1
+</footer>
+</body>
+</html>

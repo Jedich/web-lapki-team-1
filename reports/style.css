@@ -55,43 +55,99 @@
 	font-size: 20px;
 }
 
-.layout{
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: stretch;
-	align-content: center;
-}
+ .sidenav{
+	 background-color: #F0F0F0;
+	 display: flex;
+	 flex-direction: column;
+	 flex-wrap: nowrap;
+	 justify-content: flex-start;
+	 align-items: flex-start;
+	 align-content: space-between;
+ }
+ 
+ .sidenav a {
+	 width: 200px;
+	 float: right;
+	 color: black;
+	 text-align: center;
+	 padding: 14px 16px;
+	 text-decoration: none;
+	 font-size: 22px;
+ }
 
-.sidenav{
-	background-color: #F0F0F0;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: flex-start;
-	align-items: flex-start;
-	align-content: space-between;
-}
+ .sidenav a:hover {
+	 background-color: #ddd;
+	 color: black;
+ }
 
-.sidenav a {
-	width: 200px;
-	float: right;
-	color: black;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-	font-size: 22px;
-}
 
-.sidenav a:hover {
-	background-color: #ddd;
-	color: black;
-}
 
-/* Add a color to the active/current link */
-.sidenav a.active {
-	background-color: #6A85C3;
-	color: black;
-}
+
+ * {
+	 box-sizing: border-box;
+ }
+
+
+
+ .wrap {
+	 width: 100%;
+ }
+
+ #primary-content-wrap {
+	 position: relative;
+ }
+
+ .primary-content {
+	 width:82%;
+	 float:right;
+	 padding: 10px;
+
+ }
+
+ .primary-content h2 {
+	 font-size: 24px;
+ }
+
+ .sidebar {
+	 width:18%;
+	 float:right;
+	 padding: 0 10px;
+ }
+
+ .floating-div {
+	 font-size: 20px;
+	 margin-top:10px;
+
+ }
+
+ footer {
+	 text-align: center;
+	 clear:both;
+	 padding: 20px 60px;
+	 background: #CCC;
+ }
+
+ .sticky {
+	 position: fixed;
+	 top: 10px;
+	 left:18px;
+	 margin: 0;
+	 width:calc(18% - 25px);
+ }
+
+ .abs {
+	 position: absolute;
+	 bottom: 10px;
+	 left:10px;
+	 width:calc(18% - 20px);
+ }
+
+ .clearfix:after {
+	 content:"";
+	 display:block;
+	 clear:both;
+ }
+
+ footer h3 {
+	 font-size:24px;
+ }
