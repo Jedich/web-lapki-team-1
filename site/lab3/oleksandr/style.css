@@ -1,0 +1,61 @@
+table, th, td, .leftblock, .fh, .mainblock {
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+	font-size: 50pt;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.left {
+	width: 20%;
+}
+
+.main {
+	height:600px;
+}
+
+.blue {
+	background-color: rgb(40, 116, 179);
+	color: white;
+}
+
+.yellow {
+	background-color: rgb(255, 255, 59);
+}
+
+.wrapper {
+    height: 100%;
+	width: 90%; 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+}
+
+/*////////// float //////////*/
+
+.leftblock, .fh, .mainblock {
+	float: left;
+	padding-top: 0;
+	padding: 0;
+	vertical-align: middle;
+	border: 1px solid black; width: 120px; height: 20px; 
+    margin:-1px 0 0 -1px;
+}
+
+.leftblock {
+	width: 20%;
+	height: 925px;
+	line-height: 925px;
+}
+
+.fh {
+	width: 70%;
+	height: 150px;
+	line-height: 150px;
+}
+
+.mainblock {
+	width: 70%;
+	height: 623px;
+	line-height: 621px;
+}
