@@ -1,0 +1,30 @@
+body{
+	text-align: center;
+	font-size: 50px;
+}
+
+.container{
+	height: 500px;
+	display: flex;
+	justify-content: center;	
+}
+
+.col1{
+	width: 30%;
+	background-color: yellow;
+}
+
+.col2{
+	width: 40%;
+}
+
+.col3{
+	width: 30%;
+	background-color: yellow;
+}
+
+.row{
+	height: 100px;
+	width: 100%;
+	background-color: blue;
+}
