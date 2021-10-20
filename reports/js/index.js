@@ -5,8 +5,8 @@ $(function () {
 
     var topPosition = $('.floating-div').offset().top - 10;
     var floatingDivHeight = $('.floating-div').outerHeight();
-    var footerFromTop = $('footer').offset().top;
-    var absPosition = footerFromTop - floatingDivHeight - 20;
+    var footerFromTop = $('footer').offset().top * 5;
+    var absPosition = footerFromTop;
     var win = $(window);
     var floatingDiv = $('.floating-div');
 

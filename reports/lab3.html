@@ -2,21 +2,23 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="style.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="js/index.js"></script>
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<div class="header"><h1>
-			ЗВІТИ  З ЛАБОРАТОРНИХ РОБІТ
-			<br>З ДИСЦИПЛІНИ «РОЗРОБЛЕННЯ WEB-ЗАСТОСУВАНЬ»
-		</h1>
-		<h2>
-			Бригада №1, Студенти групи ІА-02
-		<br>Вавринюк М. П, <img class="user_photo" align="center" src="img/faces/Maks.jpg">
-		Лємєшова С. С, <img  class="user_photo" align="center" src="img/faces/Sophie.jpg">
-		Тітов Є. О, <img class="user_photo" align="center" src="img/faces/Egor.jpg">
-		Юдаков О. С. <img class="user_photo" align="center" src="img/faces/Oleksandr.jpg">
-		</h2>
-	</div>
+		<div class="header">
+			<h1>ЗВІТИ  З ЛАБОРАТОРНИХ РОБІТ<br>
+			З ДИСЦИПЛІНИ «РОЗРОБЛЕННЯ WEB-ЗАСТОСУВАНЬ»
+			</h1>
+			<h2>
+				Бригада №1, Студенти групи ІА-02
+			<br>Вавринюк М. П, <img class="user_photo" align="center" src="img/faces/Maks.jpg">
+			Лємєшова С. С, <img  class="user_photo" align="center" src="img/faces/Sophie.jpg">
+			Тітов Є. О, <img class="user_photo" align="center" src="img/faces/Egor.jpg">
+			Юдаков О. С. <img class="user_photo" align="center" src="img/faces/Oleksandr.jpg">
+			</h2>
+		</div>
 		<div class="topnav">
 			<a href="lab1.html">Лаб№1</a>
 			<a href="lab2.html">Лаб№2</a>
@@ -27,49 +29,66 @@
 			<a href="lab7.html">Лаб№7</a>
 			<a href="lab8.html">Лаб№8</a>
 			<a href="lab9.html">Лаб№9</a>
-		  </div> 
-		  <div class="content">
-		  <h2>ЛАБОРАТОРНА РОБОТА №3</h2>
-			<p id="topic_aim"><b>Тема: </b>БЛОЧНА ВЕРСТКА HTML-ДОКУМЕНТУ ЗА МАКЕТОМ</p>
-			<p><b>Мета:</b> придбати практичні навички роботи верстки сторінок засобами CSS, верстки на основі
-			 плаваючих елементів, з’ясувати переваги та недоліки типів макетів веб-сторінок</p>
-			<p><b>Розташування лабораторної: </b><a href="https://github.com/Jedich/web-lapki-team-1/tree/master/site">GitHub</a>
-				<a href="https://jedich.github.io/web-lapki-team-1/site/">Лабороторна робота №2</a></p>
+		</div>
+		<div id="primary-content-wrap" class="wrap clearfix">
+			<div class="primary-content content">
+				<h2>ЛАБОРАТОРНА РОБОТА №3</h2>
+				<p id="topic_aim"><b>Тема: </b>БЛОЧНА ВЕРСТКА HTML-ДОКУМЕНТУ ЗА МАКЕТОМ</p>
+				<p><b>Мета:</b> придбати практичні навички роботи верстки сторінок засобами CSS, верстки на основі
+				плаваючих елементів, з’ясувати переваги та недоліки типів макетів веб-сторінок</p>
+				<p><b>Розташування лабораторної: </b><a href="https://github.com/Jedich/web-lapki-team-1/tree/master/site">GitHub</a>
+					<a href="https://jedich.github.io/web-lapki-team-1/site/">Лабороторна робота №2</a></p>
 
-			<p><b>Зовнішній вигляд макетів:</b></p>
-			<ul>
-				<li>Вавринюк</li>
-				<br><img src="img/lab3/V3.JPG">
-				<li>Лємєшова</li>
-				<br><img src="img/lab3/V6.JPG">
-				<li>Тітов</li>
-				<br><img src="img/lab3/V1.JPG">
-				<li>Юдаков</li>
-				<br><img src="img/lab3/V10.JPG">
-			</ul>
-			<p><b>HTML-код макету:</b></p>
-			<p>Тітов</p>
-			<p>Розмітка сторінки за допомогою таблиці</p>
-			<ul>
-				<li>HTML-код</li>
-				<br><img src="img/lab3/egor_table_html.JPG">
-				<li>CSS-код</li>
-				<br><img src="img/lab3/egor_table_css.JPG">
-				<li>Результат</li>
-				<br><img height="500px" width="1000px" src="img/lab3/egor_table_screen.JPG">
-			</ul>
+				<p id="task"><b>Зовнішній вигляд макетів:</b></p>
+				<ul>
+					<li>Вавринюк</li>
+					<br><img src="img/lab3/V3.JPG">
+					<li>Лємєшова</li>
+					<br><img src="img/lab3/V6.JPG">
+					<li>Тітов</li>
+					<br><img src="img/lab3/V1.JPG">
+					<li>Юдаков</li>
+					<br><img src="img/lab3/V10.JPG">
+				</ul>
+				<p id=layout_html><b>HTML-код макету:</b></p>
+				<p>Тітов</p>
+				<p id="tables">Розмітка сторінки за допомогою таблиці</p>
+				<ul>
+					<li>HTML-код</li>
+					<br><img src="img/lab3/egor_table_html.JPG">
+					<li>CSS-код</li>
+					<br><img src="img/lab3/egor_table_css.JPG">
+					<li>Результат</li>
+					<br><img height="500px" width="1000px" src="img/lab3/egor_table_screen.JPG">
+				</ul>
 
-			<p>Розмітка сторінки за допомогою плаваючих блоків</p>
-			<ul>
-				<li>HTML-код</li>
-				<br><img src="img/lab3/egor_block_html.JPG">
-				<li>CSS-код</li>
-				<br><img src="img/lab3/egor_block_css.JPG">
-				<li>Результат</li>
-				<br><img height="500px" width="1000px" src="img/lab3/egor_block_screen.JPG">
-			</ul>
-				<p id="summary"><b>Висновки: </b>Протягом цієї лабораторної роботи ми  придбали практичні навички роботи верстки сторінок засобами CSS, верстки на основі
-			 плаваючих елементів, з’ясували переваги та недоліки типів макетів веб-сторінок</p>
-	</div>
+				<p id="float">Розмітка сторінки за допомогою плаваючих блоків</p>
+				<ul>
+					<li>HTML-код</li>
+					<br><img src="img/lab3/egor_block_html.JPG">
+					<li>CSS-код</li>
+					<br><img src="img/lab3/egor_block_css.JPG">
+					<li>Результат</li>
+					<br><img height="500px" width="1000px" src="img/lab3/egor_block_screen.JPG">
+				</ul>
+					<p id="summary"><b>Висновки: </b>Протягом цієї лабораторної роботи ми  придбали практичні навички роботи верстки сторінок засобами CSS, верстки на основі
+				плаваючих елементів, з’ясували переваги та недоліки типів макетів веб-сторінок</p>
+			</div>
+			<div class="sidebar">
+				<div class="floating-div">
+					<div class="sidenav">
+						<a href="#topic_aim">Тема, мета та розташування лабораторної</a>
+						<a href="#task">Зовнішній вигляд макету</a>
+						<a href="#layout_html">HTML-код макету</a>
+						<a href="#tables">Розмітка сторінки за допомогою таблиці</a>
+						<a href="#float">Розмітка сторінки за допомогою плаваючих блоків</a>
+						<a href="#summary">Висновки</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			COPYRIGHT TEAM 1
+		</footer>
 	</body>
 </html>
