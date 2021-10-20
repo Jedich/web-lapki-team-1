@@ -142,3 +142,12 @@
  footer h3 {
 	 font-size:24px;
  }
+
+ .row-ul {
+	display: flex;
+	align-items: baseline;
+}
+
+.row-ul li {
+	margin-right: 50px;
+}
