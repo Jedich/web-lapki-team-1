@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="style.css">
-	<meta charset="utf-8">
+	<head>
+		<title>
+			Звіти
+		</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="js/index.js"></script>
+		<meta charset="utf-8">
+	</head>
 </head>
 <body>
 	<div class="header"><h1>
-		ЗВІТИ  З ЛАБОРАТОРНИХ РОБІТ
+		ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ
 		<br>З ДИСЦИПЛІНИ «РОЗРОБЛЕННЯ WEB-ЗАСТОСУВАНЬ»
 	</h1>
 	<h2>
 		Бригада №1, Студенти групи ІА-02
 		<br>Вавринюк М. П, <img class="user_photo" align="center" src="img/faces/Maks.jpg">
-		Лємєшова С. С, <img  class="user_photo" align="center" src="img/faces/Sophie.jpg">
+		Лємєшова С. С, <img class="user_photo" align="center" src="img/faces/Sophie.jpg">
 		Тітов Є. О, <img class="user_photo" align="center" src="img/faces/Egor.jpg">
 		Юдаков О. С. <img class="user_photo" align="center" src="img/faces/Oleksandr.jpg">
 	</h2>
@@ -27,53 +34,83 @@
 	<a href="lab7.html">Лаб№7</a>
 	<a href="lab8.html">Лаб№8</a>
 	<a href="lab9.html">Лаб№9</a>
-</div> 
-<div class="layout">
-	<div class="sidenav">
-		<a href="#topic_aim">Тема, мета та розташування лабораторної</a>
-		<a href="#list">Списки</a>
-		<a href="#id">Ідентифікатори</a>
-		<a href="#margins">Відступи</a>
-		<a href="#floating">Плаваючі елементи</a>
-		<a href="#selectors">Cелектори</a>
-		<a href="#summary">Висновки</a>
-	</div>
-	<div style="margin: 20px;">
-		<div class="content">
+</div>
+<div class="content">
+	<div id="primary-content-wrap" class="wrap clearfix">
+		<div class="primary-content">
 			<h2>ЛАБОРАТОРНА РОБОТА №2</h2>
-			<p id="topic_aim"><b>Тема:</b>КАСКАДНІ ТАБЛИЦІ СТИЛІВ. СЕЛЕКТОРИ .ІДЕНТИФІКАТОРИ. СТИЛЬОВЕ ОФОРМЛЕННЯ ТЕКСТОВИХ ЕЛЕМЕНТІВ В HTML-ДОКУМЕНТАХ.</p>
+			<p id="topic_aim"><b>Тема: </b>КАСКАДНІ ТАБЛИЦІ СТИЛІВ. СЕЛЕКТОРИ. ІДЕНТИФІКАТОРИ. СТИЛЬОВЕ ОФОРМЛЕННЯ ТЕКСТОВИХ
+			ЕЛЕМЕНТІВ В HTML-ДОКУМЕНТАХ.</p>
 
-			<p><b>Мета:</b> придбати практичні навички роботи  з селекторами,ідентифікаторами, списками,  різноманітними властивостями кольору і фону,  зовнішними та внутрішними  відступами,  плаваючими елементами, оформленням текстових елементів</p>
+			<p><b>Мета:</b> придбати практичні навички роботи з селекторами,ідентифікаторами, списками, різноманітними
+				властивостями кольору і фону, зовнішними та внутрішними відступами, плаваючими елементами, оформленням
+			текстових елементів</p>
 			<p><b>Розташування лабораторної: </b><a href="https://github.com/Jedich/web-lapki-team-1/tree/master/site">GitHub</a>
 				<a href="https://jedich.github.io/web-lapki-team-1/site/">Лабороторна робота №2</a></p>
 				<p id="list"><b>Cписки</b></p><br>
 
 				<img src="img/lab2/img_list.JPG">
 				<img src="img/lab2/screen_list.JPG">
-
+				<img src="img/lab2/css_list.JPG">
 				<p id="id"><b>Ідентифікатори</b></p><br>
 				<img src="img/lab2/id.JPG">
 				<p id="margins"><b>Відступи</b></p><Br>
+
 				<img src="img/lab2/universal_selector.JPG">
 				<p id="floating"><b>Плаваючі елементи</b></p>
-				<img src="img/lab2/floating_element.JPG">
+				<br><img src="img/lab2/img_child_float.JPG">
+				<br><img  src="img/lab2/floating_element.JPG">
+				<br><img width="1000px" src="img/lab2/screen_float.JPG">
+
 				<p id="selectors"><b>Селектори</b></p>
 
 				<ul>
-					<li>Селектори тегу і класу</li><br><img src="img/lab2/teg_class_selectors.JPG">
-					<li>Універсальні селектори</li><br><img src="img/lab2/universal_selector.JPG">
-					<li>Сусідні селектори</li><br><img src="img/lab2/neighboor_selector.JPG">
-					<li>Дочірні селектори</li><br><img src="img/lab2/child selectors.JPG">
-					<li>Селектори атрибутів</li><br><img src="img/lab2/attr_selector.JPG">
-					<li>Групування селекторів</li><br><img src="img/lab2/group_selector.JPG">
+					<li>Селектори тегу і класу</li>
+					<br><img src="img/lab2/teg_class_selectors.JPG">
+					<li>Універсальні селектори</li>
+					<br><img src="img/lab2/universal_selector.JPG">
+					<li>Сусідні селектори</li>
+					<br><img src="img/lab2/neighboor_selector.JPG">
+					<img src="img/lab2/screen_neighboor.JPG">
+					<li>Дочірні селектори</li>
+					<br><img src="img/lab2/img_child_float.JPG">
+					<br><img src="img/lab2/child selectors.JPG">
+					<br><img src="img/lab2/screen_child.JPG">
+					<li>Селектори атрибутів</li>
+					<br><img src="img/lab2/img_attr_selector.JPG">
+					<br><img src="img/lab2/attr_selector.JPG">
+					<br><img src="img/lab2/screen_attr_selector.JPG">
+					<li>Групування селекторів</li>
+					<br><img src="img/lab1/form.JPG">
+					<br><img src="img/lab2/group_selector.JPG">
+					<br><img src="img/lab1/table_screen.JPG">
 				</ul>
 
 
+				<p id="summary"><b>Висновки: </b>Протягом цієї лабораторної роботи ми придбали практичні навички роботи з
+					селекторами,ідентифікаторами, списками, різноманітними властивостями кольору і фону, зовнішними та
+				внутрішними відступами, плаваючими елементами, оформленням текстових елементів</p>
+			</div>
 
 
-
-				<p id="summary"><b>Висновки: </b>Протягом цієї лабораторної роботи ми придбали практичні навички роботи  з селекторами,ідентифікаторами, списками,  різноманітними властивостями кольору і фону,  зовнішними та внутрішними  відступами,  плаваючими елементами, оформленням текстових елементів</p>
+			<div class="sidebar">
+				<div class="floating-div">
+					<div class="sidenav">
+						<a href="#topic_aim">Тема, мета та розташування лабораторної</a>
+						<a href="#list">Списки</a>
+						<a href="#id">Ідентифікатори</a>
+						<a href="#margins">Відступи</a>
+						<a href="#floating">Плаваючі елементи</a>
+						<a href="#selectors">Cелектори</a>
+						<a href="#summary">Висновки</a>
+					</div>
+				</div>
 			</div>
 		</div>
-	</body>
-	</html>
+	</div>
+	<!-- .wrap -->
+	<footer>
+		COPYRIGHT TEAM 1
+	</footer>
+</body>
+</html>
