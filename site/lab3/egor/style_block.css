@@ -3,27 +3,28 @@ body{
 	font-size: 50px;
 }
 
-.container{
-	height: 500px;
-	display: flex;
-	justify-content: center;	
-}
-
 .col1{
+	height: 500px;
+	float: right;
 	width: 30%;
 	background-color: yellow;
 }
 
 .col2{
+	height: 500px;
 	width: 40%;
+	float: right;
 }
 
 .col3{
+	height: 500px;
+	float: left;
 	width: 30%;
 	background-color: yellow;
 }
 
 .row{
+	clear: both;
 	height: 100px;
 	width: 100%;
 	background-color: blue;
