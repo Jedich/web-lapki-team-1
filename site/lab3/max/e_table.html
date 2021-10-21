@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style_table.css">
+    <title>Document</title>
+</head>
+<body>
+<table class="outer-table" border="">
+    <tr bgcolor="#ffcc00">
+        <td colspan="3">
+            <div class="floatings"></div>
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#3366ff">2</td>
+        <td>
+            <table class="inner-table" style="height: 100%;">
+                <tr>
+                    <td style="height: 70px" bgcolor="#ff5050" colspan="2"></td>
+                </tr>
+                <tr>
+                    <td> 3</td>
+                    <td bgcolor="#3366ff" rowspan="2">4</td>
+                </tr>
+                <tr>
+                    <td style="height: 30px" bgcolor="#ff5050"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr bgcolor="#ffcc00">
+        <td colspan="3"> 5</td>
+    </tr>
+</table>
+</body>
+</html>
