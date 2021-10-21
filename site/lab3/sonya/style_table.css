@@ -1,0 +1,62 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 720px;
+    display: block;
+    overflow: auto;
+    font-size: 50pt;
+}
+
+th, td, .footer {
+    border: 1px solid black;
+}
+
+th, .footer {
+    background-color: rgb(230, 217, 40);
+    height: 100px;
+}
+
+.inHeader {
+    margin: 35px;
+    background-color: white;
+    border: 1px solid black;
+    float: left;
+    width: 280px;
+    height: 25px;
+    border-collapse: collapse;
+}
+
+#inHeader {
+    border: 0px;
+}
+
+.td5, .td4, .td3, .td2 {
+    height: 504px;
+    width: 440px;
+    text-align: center;
+}
+
+th {
+    text-align: right;
+}
+
+.addictional {
+    width: 53px;
+    border: 0px;
+}
+
+.td2 {
+    background-color: rgb(50, 76, 218);
+}
+
+.td3, .td5 {
+    background-color: rgb(218, 70, 50);
+}
+
+.td4 {
+    background-color: rgb(255, 255, 255);
+}
+
+.footer {
+    text-align: left;
+}

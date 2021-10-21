@@ -1,0 +1,51 @@
+#header {
+    border: 1px solid black;
+    text-align: right;
+    background-color: rgb(230, 217, 40);
+    width: 1499px;
+    height: 100px;
+    float: left;
+	font-size: 50pt;
+}
+
+#inHeader {
+    border: 1px solid black;
+    width: 280px;
+    height: 25px;
+    background-color: white;
+    margin: 35px;
+    float: left;
+}
+
+#footer {
+    font-size: 50pt;
+    border: 1px solid black;
+    text-align: left;
+    background-color: rgb(230, 217, 40);
+    width: 1499px;
+    height: 100px;
+    float: left;
+}
+
+.coloumn {
+    font-size: 50pt;
+    border: 1px solid black;
+    float: left;
+    margin-right: 31px;
+    width: 350px;
+    height: 504px;
+    text-align: center;
+}
+
+
+.c2 {
+    background-color: rgb(50, 76, 218);
+}
+
+.c3, .c5 {
+    background-color: rgb(218, 70, 50);
+}
+
+.c5 {
+    margin-right: 0%;
+}
