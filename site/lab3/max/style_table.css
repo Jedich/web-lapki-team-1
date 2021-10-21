@@ -1,0 +1,58 @@
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body{
+	text-align: center;
+	font-size: 50px;
+}
+table{
+	border: solid;
+}
+.floatings{
+	border: solid;
+	border-collapse: separate;
+	width: 350px;
+	margin-left: 20px;
+	height: 50px;
+	background-color: white;
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	background-color: #fff;
+	width: 100%;
+	border-collapse: separate;
+}
+
+tr {
+	border: 0;
+}
+
+td {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.outer-table {
+	height: 100vh;
+}
+
+
+.outer-table__top div {
+	width: 500px;
+	height: 100px;
+	background-color: #fff;
+	border: 1px solid #000;
+	margin-left: 20px;
+}
+
+.inner-table{
+	border-spacing: 20px;
+}
