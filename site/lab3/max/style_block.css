@@ -22,19 +22,6 @@ div {
     background-color: #3366ff;
 }
 
-.c-blue {
-    background-color: #3366ff;
-}
-
-.c-red {
-    background-color: #ff5050;
-}
-
-.c-white {
-    background-color: #fff;
-}
-
-
 .inner-container {
     border: 15px solid #fff;
     height: 500px;
@@ -75,16 +62,29 @@ div.inner-container * {
 
 }
 
-.floater{
+.floater {
     margin-left: 10px;
     margin-top: 20px;
     width: 40%;
     height: 60%;
 }
 
-.p-8{
-	height: 80%;
+.p-8 {
+    height: 80%;
 }
-.p-2{
-	height: 20%;
+
+.p-2 {
+    height: 20%;
+}
+
+.c-blue {
+    background-color: #3366ff;
+}
+
+.c-red {
+    background-color: #ff5050;
+}
+
+.c-white {
+    background-color: #fff;
 }
