@@ -161,30 +161,31 @@
 	 width: 190px;
  }
 
- a {
+ a.lab4 {
 	 padding: 2px 1px 0;
-	 font-style: oblique;
  }
 
- a:link {
+ a.lab4:link {
 	 color: #265301;
  }
 
- a:visited {
+ a.lab4:visited {
 	 color: #437A16;
  }
 
- a:focus {
+
+ a.lab4:active {
+	 background: #265301;
+	 color: #CDFEAA;
+ }
+
+ a.lab4:focus {
 	 border-bottom: 1px solid;
 	 background: #BAE498;
  }
 
- a:hover {
+ a.lab4:hover {
 	 border-bottom: 1px solid;
 	 background: #CDFEAA;
  }
 
- a:active {
-	 background: #265301;
-	 color: #CDFEAA;
- }
