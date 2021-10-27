@@ -67,10 +67,17 @@ class Calculator {
 
     compute() {
         let computation
+        let c = this.currentOperand.toString()
         const prev = parseFloat(this.previousOperand)
         const current = this.parseCurrent()
-        console.log(current)
-        if (isNaN(prev) || isNaN(current)) return
+        if (c.includes('^') || c.includes('√')){
+            if (!this.operation){
+                this.currentOperand = current
+                this.operation = undefined
+                this.previousOperand = ''
+                return;
+            }
+        }else if (isNaN(prev) || isNaN(current)) return
         switch (this.operation) {
             case '+':
                 computation = prev + current
