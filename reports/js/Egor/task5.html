@@ -1,19 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<input type="text" id="arrayLength"> Enter the length of array</input>
-<button onclick="result()">Submit</button>
+<h2>Task 1</h2>
+Enter the length of array <input type="text" id="arrayLength"><br>
+<button onclick="result()">Enter</button>
 
-<script src="task5.js"></script>
+<script src="task5-1.js"></script>
 
-<br>Array: <span id="result"></span>
+<br>Array: <span id="array"></span>
+<br>Sorted array (selection sort): <span id="sortedArray"></span>
 <br>Min Odd = <span id="minOdd"></span>
 <br>Max Odd = <span id="maxOdd"></span>
 <br>Min Even = <span id="minEven"></span>
 <br>Max Even = <span id="maxEven"></span>
+
+<hr>
+<h2>Task 2</h2>
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="../../img/faces/Egor.jpg" style="width:50%">
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="../../img/faces/Maks.jpg" style="width:50%">
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="../../img/faces/Sophie.jpg" style="width:50%">
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="../../img/faces/Oleksandr.jpg" style="width:50%">
+    </div>
+
+</div>
+<br>
+
+<div>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
+
+<script src="task5-2.js"></script>
+
 </body>
 </html>

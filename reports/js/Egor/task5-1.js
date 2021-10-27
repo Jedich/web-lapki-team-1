@@ -32,7 +32,8 @@ function result(){
 
         }
     }
-    document.getElementById("result").innerHTML = selectionSort(arrayA);
+    document.getElementById("array").innerHTML = arrayA;
+    document.getElementById("sortedArray").innerHTML = selectionSort(arrayA);
     document.getElementById("maxEven").innerHTML = maxEven;
     document.getElementById("maxOdd").innerHTML = maxOdd;
     document.getElementById("minEven").innerHTML = minEven;
