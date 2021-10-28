@@ -189,3 +189,9 @@
 	 background: #CDFEAA;
  }
 
+ xmp {
+ 	overflow-y:scroll;
+	 max-height:600px;
+
+ }
+
