@@ -1,4 +1,3 @@
-// load function immediately
 (function(window, document) {
 
     let currentDateSelector = null;
@@ -19,7 +18,6 @@
         constructor: dateSelector,
 
         __init__: function(){
-            // Bind display on click
             document.removeEventListener('click', self.bindCalendar, false);
             document.removeEventListener('keypress', self.keypressHandler, false);
             document.addEventListener('click', self.bindCalendar, false);
@@ -77,122 +75,24 @@
             self.selector.classList.add('dateselector');
             self.selector.style.left = position.x + 'px';
             self.selector.style.top = position.y + 'px';
-            // self.selector.appendChild( self.drawNavigation() );
             self.selector.appendChild( self.drawSelectorControls() );
             self.selector.appendChild( self.drawMonthTableContainer() );
 
             self.target.parentNode.insertBefore( self.selector, self.target.nextSibling );
         },
 
-        // drawNavigation: function(){
-        //     var nav = document.createElement('div');
-        //     nav.classList.add('title-nav');
-        //
-        //     if (self.options.navigateYear) {
-        //         previousYear = document.createElement('div');
-        //         previousYear.classList.add('year-navigate');
-        //         previousYear.classList.add('previous');
-        //         previousYear.setAttribute('tabIndex', 0);
-        //         previousYear.innerHTML = '<<';
-        //
-        //         nextYear = document.createElement('div');
-        //         nextYear.classList.add('year-navigate');
-        //         nextYear.classList.add('next');
-        //         nextYear.setAttribute('tabIndex', 0);
-        //         nextYear.innerHTML = '>>';
-        //     }
-        //     previousMonth = document.createElement('div');
-        //     previousMonth.classList.add('month-navigate');
-        //     previousMonth.classList.add('previous');
-        //     previousMonth.setAttribute('tabIndex', 0);
-        //     previousMonth.innerHTML = '<';
-        //
-        //     currentMonth = document.createTextNode(
-        //         self.options.months.long[self.current.month] + ' ' + self.current.year
-        //     );
-        //
-        //     nextMonth = document.createElement('div');
-        //     nextMonth.classList.add('month-navigate');
-        //     nextMonth.classList.add('next');
-        //     nextMonth.setAttribute('tabIndex', 0);
-        //     nextMonth.innerHTML = '>';
-        //     //nextMonth.addEventListener('click', self.getNextMonth, false);
-        //
-        //     if (self.options.navigateYear) nav.appendChild( previousYear );
-        //     nav.appendChild( previousMonth );
-        //     nav.appendChild( currentMonth );
-        //     nav.appendChild( nextMonth );
-        //     if (self.options.navigateYear) nav.appendChild( nextYear );
-        //
-        //     return nav;
-        // },
-
-        setSelectedYear: function(yearSelected) {
-            var current = new Date( yearSelected, self.current.month);
-            self.current = {
-                year: current.getFullYear(),
-                month: current.getMonth()
-            };
-            self.show();
-        },
-
-        setSelectedMonth: function(monthSelected) {
-            var current = new Date( self.current.year, monthSelected);
-            self.current = {
-                year: current.getFullYear(),
-                month: current.getMonth()
-            };
-            self.show();
-        },
-
-        // getPreviousYear: function() {
-        //     var current = new Date( self.current.year -1, self.current.month);
-        //     self.current = {
-        //         year: current.getFullYear(),
-        //         month: current.getMonth()
-        //     };
-        //     self.show();
-        // },
-        //
-        // getNextYear: function() {
-        //     var current = new Date( self.current.year + 1, self.current.month);
-        //     self.current = {
-        //         year: current.getFullYear(),
-        //         month: current.getMonth()
-        //     };
-        //     self.show();
-        // },
-        //
-        // getPreviousMonth: function() {
-        //     var current = new Date( self.current.year, self.current.month - 1);
-        //     self.current = {
-        //         year: current.getFullYear(),
-        //         month: current.getMonth()
-        //     };
-        //     self.show();
-        // },
-        //
-        // getNextMonth: function() {
-        //     var current = new Date( self.current.year, self.current.month + 1);
-        //     self.current = {
-        //         year: current.getFullYear(),
-        //         month: current.getMonth()
-        //     };
-        //     self.show();
-        // },
 
         drawSelectorControls: function() {
             var selectorControls = document.createElement('div');
             selectorControls.classList.add('selector-controls-container');
             selectorControls.classList.add('custom-select');
 
-            // create the years select field
             var yearSelectorElement = document.createElement('select');
             yearSelectorElement.classList.add('year-selector-controller');
             yearSelectorElement.classList.add('custom-select');
-            // generate year options
+
             selectorControls.appendChild( yearSelectorElement );
-            //Create and append the options
+
             for (var years = 1960; years < 2030; years++) {
                 var yearOption = document.createElement("option");
                 if (years === new Date().getFullYear()){
@@ -202,32 +102,27 @@
                 yearOption.text = years;
                 yearSelectorElement.appendChild(yearOption);
             }
-            // var yearSelectorElement = document.getElementsByClassName('year-selector-controller');
+
             yearSelectorElement.addEventListener('change', function(){
                 self.setSelectedYear(this.value);
-                // alert(this.value);
             });
 
-            // create the months select field
+
             var monthSelectorElement = document.createElement('select');
             monthSelectorElement.classList.add('month-selector-controller');
-            // generate month options
             var months = self.options.months.long;
             selectorControls.appendChild( monthSelectorElement );
-            //Create and append the options
             for (var i = 0; i < months.length; i++) {
                 var monthOption = document.createElement("option");
                 if (i === new Date().getMonth()){
                     monthOption.selected = true;
                 }
                 monthOption.value = i;
-                // monthOption.value = months[i];
                 monthOption.text = months[i];
                 monthSelectorElement.appendChild(monthOption);
             }
             monthSelectorElement.addEventListener('change', function(){
                 self.setSelectedMonth(this.value);
-                // alert("option selected");
             });
 
             return selectorControls
@@ -240,7 +135,6 @@
             monthTableContainer.appendChild( self.drawWeekHeader() );
             var weeks = self.getWeeks();
             for (var i=0; i<weeks.length; i++) {
-                // self.selector.appendChild( weeks[i] );
                 monthTableContainer.appendChild( weeks[i] );
             }
 
