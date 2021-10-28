@@ -65,6 +65,107 @@
 			<a class="lab4" href="js/Egor/task5.html">Варіант-5</a>
 			<li>Юдаков</li>
 			<a class="lab4" href="js/oleksandr/task10.html">Варіант-10</a>
+			JS код
+			<xmp class="scrollbox">
+function task1() {
+	let max = 20;
+	let elementNum = parseInt(document.getElementById("textbox").value);
+	let array = [];
+	for (let i = 0; i < elementNum; i++) {
+		array[i] = Math.floor(Math.random() * max);
+	}
+	let div = document.getElementById('output');
+	div.innerHTML = array;
+
+	moveToStart(array);
+	div.innerHTML += ` (${array})`;
+
+	selectionSort(array);
+	div.innerHTML += "<br>" + array;
+}
+
+function moveToStart(array) {
+	let smallestIndex = indexOfSmallest(array);
+	let smallestNum = array[smallestIndex];
+	array.splice(smallestIndex, 1);
+	elementNum = array.length;
+	for(let i = 0; i < elementNum; i++) {
+		array[elementNum - i] = array[elementNum - i - 1];
+	}
+	array[0] = smallestNum;
+}
+
+function indexOfSmallest(a) {
+	var lowest = 0;
+	for (var i = 1; i < a.length; i++) {
+		if (a[i] < a[lowest]) lowest = i;
+	}
+	return lowest;
+}
+
+function selectionSort(inputArr) {
+	let n = inputArr.length;
+	for (let i = 0; i < n; i++) {
+		let min = i;
+		for (let j = i + 1; j < n; j++) {
+			if (inputArr[j] < inputArr[min]) {
+				min = j;
+			}
+		}
+		if (min != i) {
+			let tmp = inputArr[i];
+			inputArr[i] = inputArr[min];
+			inputArr[min] = tmp;
+		}
+	}
+	return inputArr;
+}				
+			</xmp>
+			CSS код
+			<xmp class="scrollbox">
+[info] .tooltip {
+	position: fixed;
+	padding: 3px;
+	background: white;
+	border: 1px solid #ccc;
+	visibility: hidden;
+	opacity: 0;
+	max-width: 200px;
+	margin: auto;
+}
+
+[info]:hover .tooltip {
+	visibility: visible;
+	opacity: 1;
+}
+
+[info] {
+	text-decoration: underline; 
+	text-decoration-color: #00000040;
+}
+			</xmp>
+			HTML код
+			<xmp class="scrollbox">
+<html>
+	<head>
+		<script src="task10-1.js"></script>
+		<script src="task10-2.js"></script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<button onclick="task1()">Click me</button>
+		<input type="text" id="textbox" name="name" /><br />
+		<div id="output"></div>
+
+		<button info="До вашої уваги - кнопка. Ця кнопка - відображення звичайної кнопки.">Button</button>
+		<br>
+		<p>Lorem ipsum dolor sit amet, 
+			<span info="Це кусок тексту">consectetur adipiscing elit.</span>
+			Donec accumsan tincidunt turpis eu ultrices. Phasellus.</p>
+		<script type="text/javascript">tip()</script>
+	</body>
+</html>
+			</xmp>
 		</ul>
 		<h4 id=""></h4>
 
