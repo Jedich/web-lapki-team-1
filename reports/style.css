@@ -199,6 +199,7 @@
  xmp {
  	overflow-y:scroll;
 	 max-height:600px;
-
+	 background-color: #fafafa;
+	 border: 1px solid #ccc;
  }
 
