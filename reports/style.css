@@ -196,3 +196,9 @@
 	font: 16px/26px Georgia, Garamond, Serif;
 	overflow: scroll;
 }
+ xmp {
+ 	overflow-y:scroll;
+	 max-height:600px;
+
+ }
+
