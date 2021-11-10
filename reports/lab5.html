@@ -50,7 +50,70 @@
         <h4 id="dynamic_el"><b>Динамічні елемнети</b></h4>
 
         <h4 id="gallery"><b>Галерея UniteGallery</b></h4>
+        <p><b>HTML</b></p>
+<xmp>
+    <div id="photoGallery" style="display:none;">
 
+        <img src="../reports/img/faces/Egor.jpg"
+             data-image="../reports/img/faces/Egor.jpg">
+
+        <img src="../reports/img/faces/Sophie.jpg"
+             data-image="../reports/img/faces/Sophie.jpg">
+
+        <img src="../reports/img/faces/Oleksandr.jpg"
+             data-image="../reports/img/faces/Oleksandr.jpg">
+
+        <img src="../reports/img/faces/Maks.jpg"
+             data-image="../reports/img/faces/Maks.jpg">
+
+    </div>
+    <div id="videoGallery">
+
+        <div data-type="youtube"
+             data-image="../reports/img/faces/Egor.jpg"
+             data-thumb="../reports/img/faces/Egor.jpg"
+             data-videoid="AY7xZ1HvtJs"
+             data-title="GoPro Demo"
+             data-description="TUN TUN TUN TUN TUN"></div>
+
+        <div data-type="youtube"
+             data-image="../reports/img/faces/Maks.jpg"
+             data-thumb="../reports/img/faces/Maks.jpg"
+             data-videoid="JkDieSJRdyc"
+             data-title="Solus"
+             data-description="АРТУУУУУР ПИРОЖКООООВ"></div>
+
+        <div data-type="youtube"
+             data-image="../reports/img/faces/Oleksandr.jpg"
+             data-thumb="../reports/img/faces/Oleksandr.jpg"
+             data-videoid="GEfqFVGiDgg"
+             data-title="Solus"
+             data-description="МАМА Я ГУЛЬ"></div>
+
+        <div data-type="youtube"
+             data-image="../reports/img/faces/Sophie.jpg"
+             data-thumb="../reports/img/faces/Sophie.jpg"
+             data-videoid="UOxkGD8qRB4"
+             data-title="Solus"
+             data-description="LOL"></div>
+
+
+    </div>
+</xmp>
+        <p><b>Script</b></p>
+<xmp>
+    <script type="text/javascript">
+
+        jQuery(document).ready(function () {
+            jQuery("#photoGallery").unitegallery();
+        });
+
+        jQuery(document).ready(function () {
+            jQuery("#videoGallery").unitegallery();
+        });
+    </script>
+</xmp>
+        <p><b><a href="../site/gallery.html">Результат</a></b></p>
         <h4 id="buttons">Кнопки соціальних мереж</h4>
 
         <h4 id="informers">Інформери</h4>
