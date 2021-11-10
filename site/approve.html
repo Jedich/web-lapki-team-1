@@ -2,22 +2,29 @@
 <html>
 	<head>
 		<title>UkrAbobus</title>
-		<meta charset="utf-8">
+		<meta charset="utf-8" />
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
 			rel="stylesheet"
 			integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
 			crossorigin="anonymous"
 		/>
-		<style>
-			table,
-			th,
-			td {
-				border: 1px solid black;
-				margin: 10px;
-				padding: 10px;
-			}
-		</style>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="stylesheet"
+			href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
+		/>
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+		<script>
+			$(function () {
+				$("#tabs").tabs();
+    			$( "#slider" ).slider({step: 1, max:5, slide: function( event, ui ) {
+          			$( "#value" ).html( ui.value );
+     			 }});
+				$( "#datepicker" ).datepicker();
+  			});
+		</script>
 	</head>
 
 	<body>
@@ -35,6 +42,59 @@
 				</a>
 			</div>
 		</nav>
-        OK.
+		
+		<div class="main-content">
+			<form>
+			<h5>Особисті дані</h5>
+			Ім'я: <input type="text"> Прізвище: <input type="text">
+			<h5>Оберіть клас</h5>
+			<div id="tabs">
+				<ul>
+					<li><a href="#tabs-1">Економ</a></li>
+					<li><a href="#tabs-2">Стандарт</a></li>
+					<li><a href="#tabs-3">Комфорт</a></li>
+				</ul>
+				<div id="tabs-1">
+					<p>
+						Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus.
+						Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. 
+					</p>
+				</div>
+				<div id="tabs-2">
+					<p>
+						Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida
+						ante, ut pharetra massa metus id nunc. Duis scelerisque molestie
+						turpis. Sed fringilla, massa eget luctus malesuada, metus eros
+						molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet
+						fringilla sem.
+					</p>
+				</div>
+				<div id="tabs-3">
+					<p>
+						Клас комфорт є справжнім готелем на колесах, який облаштований
+						кухнею, великою залою та просторим спальним купе. Кухня обладнана
+						холодильником, мікрохвильовою піччю та електроплитою. Велику залу
+						облаштовано м’яким куточком, комп’ютером, аудіо- та відеотехнікою. У
+						спальному купе розташовано ліжко, письмовий стіл, шафа, кондиціонер,
+						ванна кімната. Кількість спальних місць становить від 5 до 11 (у
+						залежності від конструкції вагону). Також вагони класу комфорт
+						облаштовані спеціальними купе для охорони та службового персоналу.
+					</p>
+				</div>
+			</div>
+			<div class="sub-menu">
+				<div>
+					<h5 style="margin-bottom: 20px;">Оберіть кількість пасажирів</h5>
+					<div id="slider" style="margin-right: 100px;"></div><p id="value">0</p>
+				</div>
+				<div>
+					<h5>Оберіть дату</h5>
+					Date: <input type="text" id="datepicker">
+				</div>
+			</div>
+			<input type="submit" value="Підтвердити!" class="btn btn-success"/>
+		</form>
+		</div>
+		
 	</body>
 </html>

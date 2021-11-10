@@ -14,6 +14,33 @@
 	background-color: #8ffff8 !important;
 }
 
+table,
+th,
+td {
+	border: 1px solid black;
+	margin: 10px;
+	padding: 10px;
+}
+.main-content {
+	margin-left: 30%;
+	margin-right: 30%;
+}
+.main-content > * {
+	margin-top: 10px;
+}
+
+.sub-menu {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: baseline;
+	align-content: center;
+}
+
+.sub-menu > div {
+	flex: 1;
+  }
 
 a[href*="reports"] {background-color: #CCCCCC;}
 
