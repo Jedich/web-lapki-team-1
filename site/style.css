@@ -119,11 +119,17 @@ b+i{
   }
 
   /*clock*/
+.time {
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	top: 25px;
+}
 
   .time span {
 	display: inline-block;
 	width: 20px;
-	margin-left: 6px;
+	margin-right: 6px;
 }
 .time span.colon {
 	width: 4px;
