@@ -48,6 +48,25 @@
             <a href="https://jedich.github.io/web-lapki-team-1/site/">Лабороторна робота №5</a></p>
 
         <h4 id="dynamic_el"><b>Динамічні елемнети</b></h4>
+        <p><b>HTML</b></p>
+        <xmp>
+            <link
+                    rel="stylesheet"
+                    href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
+            />
+            <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+            <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+            <script>
+                $(function () {
+                    $("#tabs").tabs();
+                    $( "#slider" ).slider({step: 1, max:5, slide: function( event, ui ) {
+                            $( "#value" ).html( ui.value );
+                        }});
+                    $( "#datepicker" ).datepicker();
+                });
+            </script>
+        </xmp>
+        <p><b><a href="../site/">Результат</a></b></p>
 
         <h4 id="gallery"><b>Галерея UniteGallery</b></h4>
         <p><b>HTML</b></p>
@@ -118,10 +137,31 @@
 
         <h4 id="informers">Інформери</h4>
 
+        <h4 id="media"><b>jQuery мультимедіа</b></h4>
+        <p><b>HTML</b></p>
+        <xmp>
+            <link rel="stylesheet" href="gifplayer.css" />
+            <h2>Кубік:</h2>
+            <section>
+                <img class="gifplayer" src="media/dick.png" />
+            </section>
+
+
+            <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+            <script src="jquery.gifplayer.js"></script>
+            <script>
+                $(document).ready( function(){
+                    $('.gifplayer').gifplayer();
+                });
+            </script>
+        </xmp>
+        <p><b><a href="../site/archive.html">Результат</a></b></p>
+
         <p id="summary"><b>Висновки: </b> протягом цієї лабораторної роботи ми
             придбали практичні навички роботи jQuery UI, вміти додавати до сайту динамічні елементи цієї бібіліотеки,
             плагін галереї UniteGallery, кнопки соціальних мереж, інформери та інше.
         </p>
+
     </div>
     <div class="sidebar">
         <div class="floating-div">
@@ -130,6 +170,7 @@
                     <a href="#topic_aim">Тема, мета та розташування лабораторної</a>
                         <a href="#dynamic_el">Динамічні елемнети</a>
                         <a href="#gallery">Галерея UniteGallery</a>
+                        <a href="#media">jQuery мультимедіа</a>
                        <a href="#buttons">Кнопки соціальних мереж</a>
                        <a href="#informers">Інформери</a>
                        <a href="#summary">Висновки</a>
