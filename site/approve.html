@@ -30,6 +30,12 @@
 				$( "#menu" ).menu();
   			});
 		</script>
+		<style>
+			label {
+			  display: inline-block;
+			  width: 5em;
+			}
+			</style>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 		<script src="js/digital_clock.js"></script>
 	</head>
@@ -63,6 +69,9 @@
 			<form>
 			<h5>Особисті дані</h5>
 			Ім'я: <input type="text"> Прізвище: <input type="text">
+			<h5>
+				<label for="email">Електронна пошта:</label><input id="email" title="На введену пошту буде відправлен електронний квиток">
+			</h5>
 			<h5>Тип документу</h5>
 			<label for="speed">Виберіть тип документу</label>
 			<select name="speed" id="speed">
