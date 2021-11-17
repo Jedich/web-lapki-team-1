@@ -12,19 +12,32 @@
 		<link rel="stylesheet" href="style.css" />
 		<link
 			rel="stylesheet"
-			href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
+			href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
 		/>
 		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function () {
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+		<script>
+			$(function () {
 				$("#tabs").tabs();
     			$( "#slider" ).slider({step: 1, max:5, slide: function( event, ui ) {
           			$( "#value" ).html( ui.value );
      			 }});
 				$( "#datepicker" ).datepicker();
+				$(document).tooltip();
+				$( "#speed" ).selectmenu();
+				$( "#menu" ).menu();
   			});
 		</script>
+		<style>
+			label {
+			  display: inline-block;
+			  width: 5em;
+			}
+			</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+		<script src="js/digital_clock.js"></script>
 	</head>
 
 	<body>
@@ -53,9 +66,20 @@
 		</nav>
 		
 		<div class="main-content">
-			<form action="confirm.php" method="post">
+			<form>
 			<h5>Особисті дані</h5>
-			Ім'я: <input type="text" name="name"> Прізвище: <input type="text" name="surname">
+			Ім'я: <input type="text"> Прізвище: <input type="text">
+			<h5>
+				<label for="email">Електронна пошта:</label><input id="email" title="На введену пошту буде відправлен електронний квиток">
+			</h5>
+			<h5>Тип документу</h5>
+			<label for="speed">Виберіть тип документу</label>
+			<select name="speed" id="speed">
+				<option  selected="selected">Дорослий</option>
+				<option>Студентський</option>
+				<option>Дитячий</option>
+				<option>Пільговий</option>
+			</select>
 			<h5>Оберіть клас</h5>
 			<div id="tabs">
 				<ul>
@@ -98,7 +122,7 @@
 				</div>
 				<div>
 					<h5>Оберіть дату</h5>
-					Date: <input type="text" id="datepicker" name="date">
+					Date: <input type="text" id="datepicker">
 				</div>
 			</div>
 			<input type="submit" value="Підтвердити!" class="btn btn-success"/>
