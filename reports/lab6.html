@@ -79,7 +79,26 @@
 						$( "#type" ).selectmenu();
 					});
 				</xmp>
-				<li></li>
+				<li>CheckBox</li>
+				<img src="img/lab6/checkbox.JPG">
+				<p>HTML i JS</p>
+				<xmp>
+					<h5>Послуги</h5>
+					<fieldset>
+						<input class="input" type="checkbox" name="checkbox-1" id="checkbox-1">
+						<label style="width: 100px" for="checkbox-1">Постіль</label>
+						<input class="input" type="checkbox" name="checkbox-2" id="checkbox-2">
+						<label style="width: 100px" for="checkbox-2">1 напій</label>
+						<input class="input" type="checkbox" name="checkbox-3" id="checkbox-3">
+						<label style="width: 100px" for="checkbox-3">2 напої</label>
+					</fieldset>
+
+					$(document).ready(function () {
+						$(".input").checkboxradio({
+							icon: false
+						});
+					});
+				</xmp>
 			</ul>
 			<p id="web-server"><b>Установка веб серверу</b></p>
 			<ul>
