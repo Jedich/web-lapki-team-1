@@ -16,6 +16,8 @@
 		/>
 		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 		<script>
 			$(function () {
 				$("#tabs").tabs();
@@ -23,6 +25,9 @@
           			$( "#value" ).html( ui.value );
      			 }});
 				$( "#datepicker" ).datepicker();
+				$(document).tooltip();
+				$( "#speed" ).selectmenu();
+				$( "#menu" ).menu();
   			});
 		</script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
@@ -58,6 +63,14 @@
 			<form>
 			<h5>Особисті дані</h5>
 			Ім'я: <input type="text"> Прізвище: <input type="text">
+			<h5>Тип документу</h5>
+			<label for="speed">Виберіть тип документу</label>
+			<select name="speed" id="speed">
+				<option  selected="selected">Дорослий</option>
+				<option>Студентський</option>
+				<option>Дитячий</option>
+				<option>Пільговий</option>
+			</select>
 			<h5>Оберіть клас</h5>
 			<div id="tabs">
 				<ul>
