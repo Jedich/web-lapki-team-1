@@ -55,49 +55,49 @@
 				<img src="./img/lab6/tip.PNG">
 				<p>HTML i JS</p>
 				<xmp>
-					<script>
-					$(document).tooltip();
-					</script>
-					<label for="email">Електронна пошта:</label>
-					<input id="email" type="email" title="На введену пошту буде відправлен електронний квиток">
+	<script>
+	$(document).tooltip();
+	</script>
+	<label for="email">Електронна пошта:</label>
+	<input id="email" type="email" title="На введену пошту буде відправлен електронний квиток">
 				</xmp>
 				<li>Випадаюче меню вибору</li>
 				<img src="img/lab6/option_el.JPG">
 				<p>HTML i JS</p>
 				<xmp>
-					<h5>Тип документу</h5>
-					<label for="type">Виберіть тип документу</label>
-					<select name="type" id="type">
-						<option  selected="selected">Дорослий</option>
-						<option>Студентський</option>
-						<option>Дитячий</option>
-						<option>Пільговий</option>
-					</select>
+	<h5>Тип документу</h5>
+	<label for="type">Виберіть тип документу</label>
+	<select name="type" id="type">
+		<option  selected="selected">Дорослий</option>
+		<option>Студентський</option>
+		<option>Дитячий</option>
+		<option>Пільговий</option>
+	</select>
 
-					$(function () {
-						$(document).tooltip();
-						$( "#type" ).selectmenu();
-					});
+	$(function () {
+		$(document).tooltip();
+		$( "#type" ).selectmenu();
+	});
 				</xmp>
 				<li>CheckBox</li>
 				<img src="img/lab6/checkbox.JPG">
 				<p>HTML i JS</p>
 				<xmp>
-					<h5>Послуги</h5>
-					<fieldset>
-						<input class="input" type="checkbox" name="checkbox-1" id="checkbox-1">
-						<label style="width: 100px" for="checkbox-1">Постіль</label>
-						<input class="input" type="checkbox" name="checkbox-2" id="checkbox-2">
-						<label style="width: 100px" for="checkbox-2">1 напій</label>
-						<input class="input" type="checkbox" name="checkbox-3" id="checkbox-3">
-						<label style="width: 100px" for="checkbox-3">2 напої</label>
-					</fieldset>
+	<h5>Послуги</h5>
+	<fieldset>
+		<input class="input" type="checkbox" name="checkbox-1" id="checkbox-1">
+		<label style="width: 100px" for="checkbox-1">Постіль</label>
+		<input class="input" type="checkbox" name="checkbox-2" id="checkbox-2">
+		<label style="width: 100px" for="checkbox-2">1 напій</label>
+		<input class="input" type="checkbox" name="checkbox-3" id="checkbox-3">
+		<label style="width: 100px" for="checkbox-3">2 напої</label>
+	</fieldset>
 
-					$(document).ready(function () {
-						$(".input").checkboxradio({
-							icon: false
-						});
-					});
+	$(document).ready(function () {
+		$(".input").checkboxradio({
+			icon: false
+		});
+	});
 				</xmp>
 			</ul>
 			<p id="web-server"><b>Установка веб серверу</b></p>
@@ -122,7 +122,25 @@
 					<img src="img/lab6/httpd_charset.JPG">
 				</li>
 			</ul>
-			<p id="feedback_date"><b>Зворотній зв'язок. Відображення дати</b></p><Br>
+			<p id="feedback_date"><b>Зворотній зв'язок. Відображення дати</b></p>
+
+			Сторінка approve.html через форму надсилає POST-запит:
+			<xmp>
+	<div class="main-content">
+		<form action="confirm.php" method="post">
+		<h5>Особисті дані</h5>
+			</xmp>
+			confirm.PHP:<br>
+			<xmp>
+	<?php
+		$letters = "AMNGHETDA";
+		$var = substr(str_shuffle($letters), -2)."-".rand(10000, 99999);
+	?>
+	<div class="main-content" style="font-size:30px; text-align:center">
+		Дякуємо за замовлення, <?php echo $_POST["name"] . " " . $_POST["surname"]; ?><br>
+		Номер квитка: <?= $var ?><br> Дата: <?php echo $_POST["date"]; ?>
+	</div>
+			</xmp>
 
 			<p id="summary"><b>Висновки: </b>Протягом цієї лабораторної роботи ми придбали практичні
 				навички встановлення та конфігурування WEB-сервера, встановлення та налаштування Apache
