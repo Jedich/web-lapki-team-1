@@ -12,12 +12,12 @@
 		<link rel="stylesheet" href="style.css" />
 		<link
 			rel="stylesheet"
-			href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
+			href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
 		/>
 		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-		<script>
-			$(function () {
+		<script type="text/javascript">
+			$(document).ready(function () {
 				$("#tabs").tabs();
     			$( "#slider" ).slider({step: 1, max:5, slide: function( event, ui ) {
           			$( "#value" ).html( ui.value );
@@ -25,8 +25,6 @@
 				$( "#datepicker" ).datepicker();
   			});
 		</script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-		<script src="js/digital_clock.js"></script>
 	</head>
 
 	<body>
@@ -55,9 +53,9 @@
 		</nav>
 		
 		<div class="main-content">
-			<form>
+			<form action="confirm.php" method="post">
 			<h5>Особисті дані</h5>
-			Ім'я: <input type="text"> Прізвище: <input type="text">
+			Ім'я: <input type="text" name="name"> Прізвище: <input type="text" name="surname">
 			<h5>Оберіть клас</h5>
 			<div id="tabs">
 				<ul>
@@ -100,7 +98,7 @@
 				</div>
 				<div>
 					<h5>Оберіть дату</h5>
-					Date: <input type="text" id="datepicker">
+					Date: <input type="text" id="datepicker" name="date">
 				</div>
 			</div>
 			<input type="submit" value="Підтвердити!" class="btn btn-success"/>
