@@ -50,7 +50,28 @@
 				<a href="https://jedich.github.io/web-lapki-team-1/site/">Лабороторна робота №6</a></p>
 
 			<p id="dynamic_el"><b>Динамічні елементи</b></p><br>
+			<ul>
+				<li>Вспливаюча підказка</li>
+				<li>Випадаюче меню вибору</li>
+				<img src="img/lab6/option_el.JPG">
+				<p>HTML i JS</p>
+				<xmp>
+					<h5>Тип документу</h5>
+					<label for="type">Виберіть тип документу</label>
+					<select name="type" id="type">
+						<option  selected="selected">Дорослий</option>
+						<option>Студентський</option>
+						<option>Дитячий</option>
+						<option>Пільговий</option>
+					</select>
 
+					$(function () {
+						$(document).tooltip();
+						$( "#type" ).selectmenu();
+					});
+				</xmp>
+				<li></li>
+			</ul>
 			<p id="web-server"><b>Установка веб серверу</b></p>
 			<ul>
 				<li>
