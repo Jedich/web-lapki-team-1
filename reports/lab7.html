@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="style.css">
-		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css" />
+		<meta charset="utf-8" />
 	</head>
 	<body>
-		<div class="header"><h1>
-			ЗВІТИ  З ЛАБОРАТОРНИХ РОБІТ
-			<br>З ДИСЦИПЛІНИ «РОЗРОБЛЕННЯ WEB-ЗАСТОСУВАНЬ»
-		</h1>
-		<h2>
-			Бригада №1, Студенти групи ІА-02
-			<br>Вавринюк М. П, <img class="user_photo" align="center" src="img/faces/Maks.jpg">
-		Лємєшова С. С, <img  class="user_photo" align="center" src="img/faces/Sophie.jpg">
-		Тітов Є. О, <img class="user_photo" align="center" src="img/faces/Egor.jpg">
-		Юдаков О. С. <img class="user_photo" align="center" src="img/faces/Oleksandr.jpg">
-		</h2>
-	</div>
+		<div class="header">
+			<h1>
+				ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ
+				<br />З ДИСЦИПЛІНИ «РОЗРОБЛЕННЯ WEB-ЗАСТОСУВАНЬ»
+			</h1>
+			<h2>
+				Бригада №1, Студенти групи ІА-02
+				<br />Вавринюк М. П,
+				<img class="user_photo" align="center" src="img/faces/Maks.jpg" />
+				Лємєшова С. С,
+				<img class="user_photo" align="center" src="img/faces/Sophie.jpg" />
+				Тітов Є. О,
+				<img class="user_photo" align="center" src="img/faces/Egor.jpg" />
+				Юдаков О. С.
+				<img class="user_photo" align="center" src="img/faces/Oleksandr.jpg" />
+			</h2>
+		</div>
 		<div class="topnav">
 			<a href="lab1.html">Лаб№1</a>
 			<a href="lab2.html">Лаб№2</a>
@@ -27,6 +32,204 @@
 			<a class="active" href="lab7.html">Лаб№7</a>
 			<a href="lab8.html">Лаб№8</a>
 			<a href="lab9.html">Лаб№9</a>
-		  </div> 
+		</div>
+
+		<div id="primary-content-wrap" class="wrap clearfix">
+			<div class="primary-content">
+				<div class="content">
+					<h2>ЛАБОРАТОРНА РОБОТА №7</h2>
+					<p id="topic_aim">
+						<b>Тема:</b>ВЗАЄМОДІЯ WEB-ЗАСТОСУВАНЬ З СИСТЕМОЮ УПРАВЛІННЯ БАЗАМИ
+						ДАНИХ (СУБД). ОБРОБКА РЕЗУЛЬТАТІВ SQL-ЗАПИТІВ У PHP-СЦЕНАРІЇ.
+					</p>
+					<p>
+						<b>Мета:</b> придбати практичні навички підключення до СУБД, вибору
+						бази даних, виконання запиту, отримання результатів, відключення від
+						СУБД.
+					</p>
+					<p>
+						<b>Розташування лабораторної: </b
+						><a
+							href="https://github.com/Jedich/web-lapki-team-1/tree/master/site"
+							>GitHub</a
+						>
+						<a href="https://jedich.github.io/web-lapki-team-1/site/"
+							>Лабороторна робота №7</a
+						>
+					</p>
+
+					<hr />
+
+					<p id="desc"><b>Опис об'єктів предметної галузі</b></p>
+					Перед початком моделювання баз даних необхідно визначитись з
+					предметними областями та описати їх.<br />
+					Перелік варіантів команди:
+					<ul>
+						<div style="float: left; width: 30%">
+							<li><b>Вавринюк: </b> 3. Комп'ютерна техніка</li>
+							<li><b>Тітов: </b> 5. Архів фотографій</li>
+						</div>
+						<div style="float: left; width: 70%">
+							<li><b>Лємєшова: </b> 6. Розклад руху залізничного транспорту</li>
+							<li><b>Юдаков: </b> 10. Аудіотека</li>
+						</div>
+					</ul>
+					<br />
+					Опис предметних областей:
+					<ul>
+						<li><b>Вавринюк</b></li>
+						<li><b>Тітов</b></li>
+						<li><b>Лємєшова</b></li>
+						<li><b>Юдаков</b></li>
+						<div>
+							База даних створюється для інформаційного обслуговування
+							користувачів аудіотеки. БД повинна містити дані про
+							користувачів, виконавців, пісні та музичні альбоми і надавати
+							можливість до швидкого підбору плейлістів. Відповідно до
+							предметної області система будується з врахуванням наступних
+							особливостей:
+							<ul>
+								<li>Кожна пісня може мати свій альбом.</li>
+								<li>Кожна плейліст може мати безліч пісень та належить користувачу.</li>
+								<li>Кількість пісень в альбомі та плейлисті необмежена.</li>
+							</ul>
+							Після аналізу предметної області можна виділити ряд сутностей, і
+							приступити до проектування інфологічної моделі.<br>
+							Виділимо базові сутності цієї предметної області:
+							<ul>
+								<li><b>Користувачі.</b> Атрибути користувачів – ID, дані для входу, ім’я користувача, тип підписки.</li>
+								<li><b>Пісні.</b> Атрибути пісень – ID, назва, виконавець, альбом.</li>
+								<li><b>Виконавці.</b> Атрибути виконавців – ID, ПІБ, псевдонім.</li>
+								<li><b>Альбоми.</b> Атрибути альбомів – ID, назва, виконавець.</li>
+								<li><b>Плейлісти.</b> Атрибути плейлістів – ID, назва, кількість пісень, власник.</li>
+							</ul>
+						</div>
+					</ul>
+
+					<hr />
+
+					<p id="infolog"><b>Інфологічна модель</b></p>
+					Для зображення інфологічної моделі побудуємо ER-діаграми з нотаціями
+					Чена/Crow's Foot:
+					<ul>
+						<li><b>Вавринюк</b></li>
+						<li><b>Тітов</b></li>
+						<li><b>Лємєшова</b></li>
+						<li><b>Юдаков</b></li>
+						<img src="./img/lab7/ersanya.png" style="width: 50%" />
+					</ul>
+
+					<hr />
+
+					<p id="datalog"><b>Даталогічна модель</b></p>
+					Після нормалізації до 3НФ було отримано такі даталогічні моделі, побудовані за допомогою MS Access:
+					<ul>
+						<li><b>Вавринюк</b></li>
+						<li><b>Тітов</b></li>
+						<li><b>Лємєшова</b></li>
+						<li><b>Юдаков</b></li>
+						<img src="./img/lab7/datalogsanya.PNG" />
+					</ul>
+
+					<hr />
+
+					<p id="phpmyadmin"><b>Реалізація БД в СУБД MySQL, phpMyAdmin</b></p>
+					<ul>
+						<li><b>Вавринюк</b></li>
+						<li><b>Тітов</b></li>
+						<li><b>Лємєшова</b></li>
+						<li><b>Юдаков</b></li>
+						<img src="./img/lab7/phpmasanya.PNG" />
+					</ul>
+
+					<hr />
+
+					<p id="select"><b>Введення, виведення даних БД, пошук даних</b></p>
+					<ul>
+						<li><b>Вавринюк</b></li>
+						<li><b>Тітов</b></li>
+						<li><b>Лємєшова</b></li>
+						<li><b>Юдаков</b></li>
+						Додавання і видалення:
+						<xmp>
+			<?php
+		$connection = new mysqli("localhost:3306", "root", "", "web_audio");
+		
+		$connection->query("INSERT INTO authors VALUES
+		(1, 'Artem', 'M.', 'artem_x', '+88005553535', 'id5553535'),
+		(2, 'Stanislav', 'O.', 'great_stas', '+3806745453', 'id3423546'),
+		(3, 'Denys', 'B.', 'cde_user_xexexe', '3809856468', 'id5747956');");
+		
+		$connection->query("INSERT INTO users VALUES
+		(1, 'niceuser@gmail.com', 'gfhdn4rfgs754bg', 'user_oleh', '88005553535');");
+		
+		$connection->query("INSERT INTO playlists VALUES
+		(1, 'My playlist #1', NULL, NULL, 1),
+		(2, 'My playlist #2', NULL, NULL, 1);");
+		
+		$connection->query("INSERT INTO songs VALUES
+		(1, 'Song 1', NULL, NULL, 'g4hj3f42hgk6kge', 1),
+		(2, 'Song 2', 'a beautiful song from artem', NULL, 'dsfhsjdklhfjak4', 1),
+		(3, 'Song 3', 'Another beautiful song from Artem', NULL, 'gsfwr34sdgfd', 1),
+		(4, 'Аудіо номер 1', 'Пісня від Стаса', NULL, 'cbffsdh4354', 2),
+		(5, 'Пісня', NULL, NULL, 'fsgsg5fgfsd', 3)");
+		
+		$connection->query("INSERT INTO albums VALUES
+		(1, 'Artem''s album', 'A cool album', 'fgfdgfdhgh53hd', 1);");
+		
+		$connection->query("INSERT INTO playlist_songs VALUES
+		(1, 1, 1, '2021-12-01 00:00:00'),
+		(2, 2, 1, '2021-12-01 00:00:00'),
+		(5, 2, 1, '2021-12-01 00:00:00'),
+		(6, 3, 2, '2021-12-01 00:00:00'),
+		(7, 3, 1, '2021-12-01 00:00:00'),
+		(8, 5, 1, '2021-12-01 00:00:00');");
+		
+		$connection->query("INSERT INTO album_songs VALUES
+		(1, 1, 1),
+		(3, 2, 1),
+		(4, 3, 1);");
+		
+		echo 'Дані успішно додано до БД<br>';
+		?>
+						</xmp>
+						Запит по БД:
+						<xmp>
+	<?php
+	$connection = new mysqli("localhost:3306", "root", "", "web_audio");
+	$query = "SELECT id, name, surname, username FROM authors";
+	$authors = $connection->query($query);
+	foreach ($authors as $row) {
+		echo 'Автор: ' . $row["name"] . " " . $row["surname"]. ', нікнейм: ' . $row["username"] . '. Пісні:<ul>';
+		$query2 = "SELECT * FROM songs WHERE author_id = ". $row['id'];
+		$songs = $connection->query($query2);
+		foreach ($songs as $song) {
+			$songdesc = ($song["description"] == "") ? "." : (". Description: " . $song["description"]);
+			echo '<li> ' . $song["name"] . $songdesc . '</li>';
+		}
+		echo '</ul>';
+	}
+	?>
+						</xmp>
+						Результат запиту:<br>
+						<img src="./img/lab7/queryressanya.PNG" />
+					</ul>
+				</div>
+			</div>
+
+			<div class="sidebar">
+				<div class="floating-div">
+					<div class="sidenav">
+						<a href="#topic_aim">Тема, мета та розташування лабораторної</a>
+						<a href="#desc">Опис об'єктів предметної галузі</a>
+						<a href="#infolog">Інфологічна модель</a>
+						<a href="#datalog">Даталогічна модель</a>
+						<a href="#phpmyadmin">Реалізація БД в СУБД MySQL, phpMyAdmin</a>
+						<a href="#select">Введення, виведення даних БД, пошук даних</a>
+						<a href="#summary">Висновки</a>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
