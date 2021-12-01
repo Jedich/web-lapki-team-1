@@ -98,6 +98,28 @@
                     <img width="600" height="150" src="img/lab7/egor_table_relation.jpg">
                 </div>
                 <li><b>Лємєшова</b></li>
+				<div>
+					База даних створюється для інформаційного обслуговування
+					користувачів залізниці. БД повинна містити дані про
+					потяги, їх розклади, зупинки та типи потягів і надавати
+					можливість до шводкого оновлення інформації про розклад. Відповідно до
+					предметної області система будується з врахуванням наступних
+					особливостей:
+					<ul>
+					  <li>Може існувати потяг, який не задіян в жодному розкладі.</li>
+					  <li>Кожен існуючий розклад має містити інформацію про дату прибуття, зупинку, платформу та потяг.</li>
+					  <li>Кількість зупинок у потягів необмежена.</li>
+					</ul>
+					Після аналізу предметної області можна виділити ряд сутностей, і
+					приступити до проектування інфологічної моделі.<br>
+					Виділимо базові сутності цієї предметної області:
+					<ul>
+					  <li><b>Розклади.</b> Атрибути розкладів – ID, дата прибуття, платформа, ID потягу, ID зупинки.</li>
+					  <li><b>Зупинки.</b> Атрибути зупинок – ID, місто, тривалість зупинки.</li>
+					  <li><b>Потяги.</b> Атрибути потягів – ID, ID типу потягу, кількість вагонів.</li>
+					  <li><b>Типи потягів.</b> Атрибути типів потягів – ID, ім'я, опис, вартість квитка.</li>
+					</ul>
+				  </div>
                 <li><b>Юдаков</b></li>
                 <div>
                     База даних створюється для інформаційного обслуговування
@@ -136,6 +158,7 @@
                 <li><b>Тітов</b></li>
                 <img width="800" height="600" src="img/lab7/egor_infolog.JPG">
                 <li><b>Лємєшова</b></li>
+				<img src="./img/lab7/ersonya.png" style="width: 50%">
                 <li><b>Юдаков</b></li>
                 <img src="./img/lab7/ersanya.png" style="width: 50%"/>
             </ul>
@@ -149,6 +172,7 @@
                 <li><b>Тітов</b></li>
                 <img src="img/lab7/egor_datalog.jpg">
                 <li><b>Лємєшова</b></li>
+				<img src="./img/lab7/datalogsonya.PNG">
                 <li><b>Юдаков</b></li>
                 <img src="./img/lab7/datalogsanya.PNG"/>
             </ul>
@@ -161,6 +185,7 @@
                 <li><b>Тітов</b></li>
                 <img width="1000" height="600" src="img/lab7/egor_db.JPG">
                 <li><b>Лємєшова</b></li>
+				<img src="./img/lab7/phpmasonya.PNG" >
                 <li><b>Юдаков</b></li>
                 <img src="./img/lab7/phpmasanya.PNG"/>
             </ul>
@@ -223,6 +248,50 @@ if ($mysqli -> connect_errno) {
                     ?>
                 </xmp>
                 <li><b>Лємєшова</b></li>
+				Введення, виведення даних та запит користувача:
+						<xmp>
+							<?php
+$mysqli = new mysqli("localhost:3306", "root", "", "train_timetable");
+
+$arrival_time= $_POST["arrival_time"];
+$platform= $_POST["platform"];
+$id_train = $_POST["id_train"];
+$id_stop = $_POST["id_stop"];
+
+$len_arrival_time = strlen ($arrival_time);
+$len_platform = strlen ($platform);
+$len_id_train = strlen ($id_train);
+$len_id_stop = strlen ($id_stop);
+
+if($len_arrival_time >0 & $len_platform > 0 & $len_id_train >0 & $len_id_stop > 0)
+{
+    if ($mysqli -> connect_errno) {
+        echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+        exit();
+      }
+    
+    if (!$mysqli -> query("INSERT INTO timetable (id, arrival_time, platform, id_train, id_stop) VALUES (NULL, '$arrival_time', $platform, $id_train, $id_stop)")) {
+        echo("Error blyat " . $mysqli -> error);
+    }
+}
+
+echo "Данi про розклад потягу ", $id_train, " успішно оновлені у базі даних<br>";
+
+$query = "SELECT arrival_time, platform, id_train, id_stop FROM timetable WHERE id_train = ". $id_train;
+$timetable = $mysqli->query($query);
+echo 'Поточний розклад потягу '. $id_train, '<br>';
+foreach ($timetable as $row) {
+    $query2 = "SELECT * FROM stops WHERE id = ". $row["id_stop"];
+    $stops = $mysqli->query($query2);
+    foreach ($stops as $stop) {
+        echo '<ul>Місто: '. $stop["city"]. '<li>Час прибуття '. $row["arrival_time"]. '</li> <li>Платформа: '. $row["platform"]. '</li> <li>Тривалість зупинки: '. $stop["stop_time"]. '</li></ul><br>';
+    }
+    
+}
+?>
+						</xmp>
+						Результат запиту:<br>
+						<img src="./img/lab7/queryressonya.PNG">
                 <li><b>Юдаков</b></li>
                 Додавання і видалення:
                 <xmp>
