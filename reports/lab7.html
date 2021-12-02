@@ -78,6 +78,25 @@
             Опис предметних областей:
             <ul>
                 <li><b>Вавринюк</b></li>
+                <div>
+                    База даних створюється для інформаційного обслуговування
+                    власників магазину комп. техніки. БД повинна містити дані про
+                    продавців , товарів та продажі і надавати
+                    можливість переглядати статистику. Відповідно до
+                    предметної області система будується з врахуванням наступних
+                    особливостей:
+                    <ul>
+                        <li>Продавець не може продати більше ніж є.</li>
+                    </ul>
+                    Після аналізу предметної області можна виділити ряд сутностей, і
+                    приступити до проектування інфологічної моделі.<br>
+                    Виділимо базові сутності цієї предметної області:
+                    <ul>
+                        <li><b>Продавці.</b> Атрибути користувачів – ID, імя.</li>
+                        <li><b>Товари.</b> Атрибути пісень – ID, назва, ціна</li>
+                        <li><b>Продажі.</b> Атрибути виконавців – ID, ID продавця, ID товару.</li>
+                    </ul>
+                </div>
                 <li><b>Тітов</b></li>
                 <div>
                     База даних створюється для інформаційного обслуговування персоналу фото архіву, та авторів архіву.
@@ -155,6 +174,7 @@
             Чена/Crow's Foot:
             <ul>
                 <li><b>Вавринюк</b></li>
+                <img src="img/lab7/ma/inf.jpg">
                 <li><b>Тітов</b></li>
                 <img width="800" height="600" src="img/lab7/egor_infolog.JPG">
                 <li><b>Лємєшова</b></li>
@@ -169,6 +189,7 @@
             Після нормалізації до 3НФ було отримано такі даталогічні моделі, побудовані за допомогою MS Access:
             <ul>
                 <li><b>Вавринюк</b></li>
+                <img src="img/lab7/ma/acc.jpg">
                 <li><b>Тітов</b></li>
                 <img src="img/lab7/egor_datalog.jpg">
                 <li><b>Лємєшова</b></li>
@@ -182,6 +203,7 @@
             <p id="phpmyadmin"><b>Реалізація БД в СУБД MySQL, phpMyAdmin</b></p>
             <ul>
                 <li><b>Вавринюк</b></li>
+                <img src="./img/lab7/ma/adm.jpg" >
                 <li><b>Тітов</b></li>
                 <img width="1000" height="600" src="img/lab7/egor_db.JPG">
                 <li><b>Лємєшова</b></li>
@@ -195,6 +217,57 @@
             <p id="select"><b>Введення, виведення даних БД, пошук даних</b></p>
             <ul>
                 <li><b>Вавринюк</b></li>
+                Додавання даних
+                <xmp>
+                    <?php
+$connection = new mysqli("localhost:3306", "root", "", "web");
+
+$connection->query("INSERT INTO seller VALUES
+                    (1, 'Danik'),
+                    (2, 'Mortis');");
+
+                    $connection->query("INSERT INTO product VALUES
+                    (1, 'motherboard', 12),
+                    (2, 'keyboard', 6),
+                    (3, 'RAM', 24),
+                    (4, 'CPU', 5);");
+
+
+
+                    if (!$connection->query("INSERT INTO sale VALUES
+                    (1, 1, 1, 1),
+                    (2, 2, 1, 2),
+                    (3, 3, 2, 1),
+                    (4, 4, 2, 1),
+                    (5, 3, 2, 2);")) {
+                    printf("Error: %s\n", $connection->error);
+                    }
+
+                    echo 'Дані успішно додано до БД<br>';
+                    ?>
+                </xmp>
+                Вивід даних
+                <xmp>
+                    <?php
+$connection = new mysqli("localhost:3306", "root", "", "web");
+$query = "SELECT  id, name FROM seller;";
+$sellers = $connection->query($query);
+                    foreach ($sellers as $seller) {
+                    echo 'Seller: ' . $seller["name"] . '. Sold:<ul>';
+
+                    $query2 = "SELECT p.name, p.count  FROM sale s, product p
+                    WHERE ". $seller['id'] . "= s.seller_id AND s.product_id = p.id;";
+                    $products = $connection->query($query2);
+                    foreach ($products as $product) {
+
+                    echo '<li> ' . $product["name"] . " - " . $product["count"] . '</li>';
+                    }
+                    echo '</ul>';
+                    }
+                    ?>
+                </xmp>
+                Результат запиту:<br>
+                <img src="./img/lab7/ma/res.jpg">
                 <li><b>Тітов</b></li>
                 Додавання даних
                 <xmp>
