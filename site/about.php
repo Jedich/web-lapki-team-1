@@ -2,6 +2,19 @@
 	global $pName;
 	$pName = "about";
 ?>
+<?php
+    $strJsonFileContents = file_get_contents("./res/str.json");
+    $json_data = json_decode($strJsonFileContents, true);
+    $lang = "en";
+    if ($lang == "en") {
+        $str = $json_data["en"];
+    } elseif ($lang == "de") {
+        $str = $json_data["de"];
+    } else {
+        $str = $json_data["ua"];
+    }
+?>
+
 
 <?php include 'head.php' ?>
 <body>
@@ -11,32 +24,10 @@
 			<img id="img_about" src="img/desc_pic.jpg"  />
 		</div>
 		<div>
-			<p><b>UkrAbobus</b> – <i>створений нами застосунок</i>, який дозволяє максимально спростити вашу подорож. Користувач в змозі обрати зручний для нього засіб пересування, комфортний час та маршрут. 
-			Перевага нашого застосунку полягає в комфортності та універсальності. </p>Даний WEB-додаток дозволяє користувачам придбати квитки на зручний їм транспорт для здійснення подорожі по Україні. На вибір користувача є три транспорти: потяг, літак та автобус. На одному сайті Ви можете подивитись розклад для всіх цих типів транспортів та обрати найзручніший саме Вам.
-			<p>Застосунок має наступний функціонал: перегляд розкладу потягів, автобусів та літаків придбання квитків</p>
-			<div class="list"> 
-				<ul>
-					<li class="list1">Перегляд розкладу:</li>
-					<ol>
-						<li>Потягів</li>
-						<li>Літаків</li>
-						<li>Автобусів</li>
-					</ol>
-					<li class="list1">Придбання квитків:</li>
-					<ol>
-						<li>На потяг</li>
-						<li>На літак</li>
-						<li>На автобус</li>
-					</ol>
-				</ul>
-			</div>
+			<p><b><?php echo $str["ukrabobus"];?></b> – <?php echo $str["ukrabobus_is"];?> </p><?php echo $str["app_desc"];?>
+			<p><?php echo $str["app_funct"];?></p>
+
 		</div>
 	</div>
-	<footer>
-		<div class="about_us">
-			<h3>
-				<a href="mailto:support@ukrabobus.com">Напишіть нам!</a>
-			</h3>
-		</div>
-	</footer>
+
 </body>
