@@ -44,14 +44,6 @@
 				</div>
 			</div>
 		</nav>
-		<?php
-		$letters = "AMNGHETDA";
-		$var = substr(str_shuffle($letters), -2)."-".rand(10000, 99999);
-		?>
-		<div class="main-content" style="font-size:30px; text-align:center">
-			Дякуємо за замовлення, <?php echo $_POST["name"] . " " . $_POST["surname"]; ?><br>
-			Номер квитка: <?= $var ?><br> Дата: <?php echo $_POST["date"]; ?>
-		</div>
 
 		<form action="confirm.php" method="post">
 		<?php
@@ -118,9 +110,12 @@ if($departure != $arrival)
                foreach ($timetables as $timetable) {
 
           ?>
+		  	<input type="hidden" name="name" value="<?php echo $name ?>">
+			  <input type="hidden" name="sname" value="<?php echo $sname ?>">
+			  <input type="hidden" name="date" value="<?php echo $date ?>">
               <input type="radio" name="ticket" id="<?php echo $value?>" value = "<?php echo $value?>">
               <?php
-                echo "Час відправлення ". $timetable["departure_time"]. ". Час прибуття ". $timetable["arrival_time"]. "<br>";
+                echo "Час відправлення ". $timetable["departure_time"]. ". Час прибуття ". $timetable["arrival_time"]. "Кількість місць: ".$row["number_of_places"]."<br>";
             $value += 1;
           }
 
