@@ -82,9 +82,12 @@
         </div>
     </div>
 </nav>
-
+<?php 
+$trip = $_GET["trip"];
+?>
 <div class="main-content">
     <form action="timetable.php" method="post">
+        <input type="hidden" name="transport_type" value=$trip>
         <h5>Особисті дані</h5>
         Ім'я: <input style="margin-bottom: 10px" type="text" name="name"> Прізвище: <input type="text" name="surname">
         <br>Електронна пошта: <input id="email" type="email"

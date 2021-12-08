@@ -57,6 +57,7 @@
 		<?php
 $mysqli = new mysqli("localhost:3306", "root", "", "ukrabobus_db");
 
+$trip = $_POST["trip"];
 $name= $_POST["name"];
 $surname= $_POST["surname"];
 $email = $_POST["email"];
@@ -66,9 +67,33 @@ $arrival = $_POST["arrival"];
 $class_type = $_POST["class_type"];
 $numbers_of_passangers = $_POST["numbers_of_passangers"];
 $date = $_POST["date"];
+$trip = $_GET["trip"];
 
-echo $class_type, $numbers_of_passangers;
+echo $trip;
 
+$len_name = strlen ($name);
+$len_surname = strlen ($surname);
+$len_email = strlen ($email);
+$len_date = strlen ($date);
+
+if($len_name>0 & $len_platform > 0 & $len_surname >0 & $len_email > 0 & $len_date > 0 & $departure != $arrival)
+{
+	if ($mysqli -> connect_errno) {
+		         echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+		         exit();
+		       }
+			   $query = "SELECT arrival_time, platform, id_train, id_stop FROM timetable WHERE id_train = ". $id_train;
+			   $timetable = $mysqli->query($query);
+			   echo 'Поточний розклад потягу '. $id_train, '<br>';
+			   foreach ($timetable as $row) {
+			       $query2 = "SELECT * FROM stops WHERE id = ". $row["id_stop"];
+			       $stops = $mysqli->query($query2);
+			       foreach ($stops as $stop) {
+			           echo '<ul>Місто: '. $stop["city"]. '<li>Час прибуття '. $row["arrival_time"]. '</li> <li>Платформа: '. $row["platform"]. '</li> <li>Тривалість зупинки: '. $stop["stop_time"]. '</li></ul><br>';
+			       }
+				   
+			   }
+}
 // $len_arrival_time = strlen ($arrival_time);
 // $len_platform = strlen ($platform);
 // $len_id_train = strlen ($id_train);
