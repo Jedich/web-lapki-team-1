@@ -92,8 +92,6 @@
             Для зображення інфологічної моделі побудуємо ER-діаграми з нотаціями
             Чена/Crow's Foot:
             <ul>
-                <li><b>Інфологічна модель без атрибутів</b></li>
-				<img src="./img/lab8/infolog_no_attr.jpg" style="width: 75%">
                 <li><b>Інфологічна модель з атрибутами</b></li>
                 <img src="./img/lab8/infolog_attr.jpg" style="width: 75%">
             </ul>
@@ -177,8 +175,43 @@ if (!$mysqli->query("INSERT INTO passangers(name, sname, email) VALUES ('$name',
 	echo("Error description:" . $mysqli -> error);
 }
 					</xmp>
-					Запис у файл:
+					<xmp>
+	Дякуємо за замовлення, <?php echo $_POST["name"] . " " . $_POST["surname"]; ?><br>
+    Номер квитка: <?= $var ?><br> Дата: <?php echo $_POST["date"]; ?>
+    <?php
+      $mysqli = new mysqli("localhost:3306", "root", "", "ukrabobus_db");
+            $document = $_POST["document_type"];
+            $class_type = $_POST["class_type"];
+            $numbers_of_passangers = $_POST["numbers_of_passangers"];
 
+
+            $price = 0;
+
+            $query1 = "SELECT * FROM types_of_class toc  WHERE toc.id=".$class_type.";";
+            $types_of_class = $mysqli->query($query1);
+            foreach ($types_of_class as $row){
+            $price+=$row['price'];
+            }
+            $price*=$numbers_of_passangers;
+
+            $query2 = "SELECT * FROM document_types dt  WHERE dt.id=".$document.";";
+            $document_types = $mysqli->query($query2);
+            foreach ($document_types as $row){
+            $price*=$row['discount'];
+            }
+
+            echo "<br>Загальна вартість:".$price;
+					</xmp>
+<img src="./img/lab8/result2.jpg">
+					Запис у файл:
+					<xmp>
+$fd = fopen("hello.txt", 'w') or die("не удалось создать файл");
+$str = "Дякуємо за замовлення, {$_POST['name']} {$_POST['surname']}\n Номер квитка: $var \n Дата:  {$_POST['date']} \n
+Загальна вартість:$price";
+fwrite($fd, $str);
+fclose($fd);
+					</xmp>
+					<img src="./img/lab8/note.jpg">
 			</p>
 			<p id="authotization"><b>Авторизація. Сесія.</b>
 			</p>
