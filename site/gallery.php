@@ -19,6 +19,7 @@
   <script type='text/javascript' src='uniteGallery/dist/themes/default/ug-theme-default.js'></script>
   <link rel='stylesheet' href='uniteGallery/dist/themes/default/ug-theme-default.css' type='text/css' />
 </head>
+
 <body>
 <?php include 'header.php' ?>
 <h2>Photo Gallery</h2>
