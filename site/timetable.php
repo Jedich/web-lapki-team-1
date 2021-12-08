@@ -61,7 +61,7 @@ $trip = $_POST["trip"];
 $name= $_POST["name"];
 $surname= $_POST["surname"];
 $email = $_POST["email"];
-$document_type = $_POST["document_type"];
+$document = $_POST["document_type"];
 $departure = $_POST["departure"];
 $arrival = $_POST["arrival"];
 $class_type = $_POST["class_type"];
@@ -69,7 +69,17 @@ $numbers_of_passangers = $_POST["numbers_of_passangers"];
 $date = $_POST["date"];
 $formattedDate = new DateTime($date);
 $trip = $_POST["trip"];
-echo $date;
+
+if($document=="Дорослий"){
+$document_type = 1;
+}elseif($document=="Студентський"){
+$document_type = 3;
+}elseif($document=="Дитячий"){
+$document_type = 2;
+}elseif($document=="Пільговий"){
+$document_type = 4;
+}
+
 $len_name = strlen ($name);
 $len_surnae = strlen ($surname);
 $len_email = strlen ($email);
@@ -87,7 +97,15 @@ if ($mysqli->query($sql) === TRUE) {
 } else {
   echo "Error updating record: " . $mysqli->error;
 }
+if (!$mysqli->query("INSERT INTO passangers(name, sname, email) VALUES
+('$name', '$surname', '$email');")){
+echo("Error description:" . $mysqli -> error);
+}
 
+if (!$mysqli->query("INSERT INTO tickets(id_passanger, number_of_passangers, id_type, id_document) VALUES
+({$mysqli->insert_id}, $numbers_of_passangers, $class_type, $document_type);")){
+echo("Error description:" . $mysqli -> error);
+}
 ?>
 		</form>
 		

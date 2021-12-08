@@ -109,9 +109,9 @@ echo $trip?>
         </select>
 
         <h5><?php echo $str["choose_class"];?></h5>
-        <input type="radio" name="class_type" id="econom" value="econom"><?php echo $str["econom"];?>
-        <input type="radio" name="class_type" id="standart" value="standart"><?php echo $str["standart"];?>
-        <input type="radio" name="class_type" id="comfort" value="comfort"><?php echo $str["comfort"];?>
+        <input type="radio" name="class_type" id="econom" value="1"><?php echo $str["econom"];?>
+        <input type="radio" name="class_type" id="standart" value="2"><?php echo $str["standart"];?>
+        <input type="radio" name="class_type" id="comfort" value="3"><?php echo $str["comfort"];?>
         <br>
         <h5><?php echo $str["class_desc"];?></h5>
         <div id="tabs">
