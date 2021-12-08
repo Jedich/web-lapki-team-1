@@ -112,7 +112,7 @@
             <ul>
 				Введення даних
                 <xmp>
-                    if (!$mysqli->query("INSERT INTO passangers(name, sname, email) VALUES
+if (!$mysqli->query("INSERT INTO passangers(name, sname, email) VALUES
 ('$name', '$surname', '$email');")){
 echo("Error description:" . $mysqli -> error);
 }
@@ -124,40 +124,40 @@ echo("Error description:" . $mysqli -> error);
                 </xmp>
 				Виведення даних
 				<xmp>
-					<div class="main-content" style="font-size:30px; text-align:center">
-						Дякуємо за замовлення, <?php echo $_POST["name"] . " " . $_POST["surname"]; ?><br>
-						Номер квитка: <?= $var ?><br> Дата: <?php echo $_POST["date"]; ?>
-					</div>
+<div class="main-content" style="font-size:30px; text-align:center">
+	Дякуємо за замовлення, <?php echo $_POST["name"] . " " . $_POST["surname"]; ?><br>
+	Номер квитка: <?= $var ?><br> Дата: <?php echo $_POST["date"]; ?>
+</div>
 				</xmp>
 				Пошук даних
 				<xmp>
-					echo 'Поточний розклад на '.$date.' з міста '.$departure.' до міста '.$arrival.'<br>';
+echo 'Поточний розклад на '.$date.' з міста '.$departure.' до міста '.$arrival.'<br>';
 if($departure != $arrival)
 {
-  if ($mysqli -> connect_errno) {
-             echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-             exit();
-           }
+	if ($mysqli -> connect_errno) {
+		echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+		exit();
+}
 
-      $query = "SELECT id FROM transports WHERE id_transport_type = ".$trip."";
-         $transports = $mysqli->query($query);
-         foreach ($transports as $row) {
-            $query2 = "SELECT * FROM timetables WHERE id_transport = ". $row["id"]." AND city_from ='$departure' AND city_to ='$arrival'";
-             $timetables = $mysqli->query($query2);
-               foreach ($timetables as $timetable) {
+$query = "SELECT id FROM transports WHERE id_transport_type = ".$trip."";
+$transports = $mysqli->query($query);
+foreach ($transports as $row) {
+    $query2 = "SELECT * FROM timetables WHERE id_transport = ". $row["id"]." AND city_from ='$departure' AND city_to ='$arrival'";
+    $timetables = $mysqli->query($query2);
+    foreach ($timetables as $timetable) {
 
-          ?>
-		  	<input type="hidden" name="name" value="<?php echo $name ?>">
-			  <input type="hidden" name="sname" value="<?php echo $sname ?>">
-			  <input type="hidden" name="date" value="<?php echo $date ?>">
-              <input type="radio" name="ticket" id="<?php echo $value?>" value = "<?php echo $value?>">
-              <?php
-                echo "Час відправлення ". $timetable["departure_time"]. ". Час прибуття ". $timetable["arrival_time"]. "Кількість місць: ".$row["number_of_places"]."<br>";
-            $value += 1;
-          }
+?>
+<input type="hidden" name="name" value="<?php echo $name ?>">
+<input type="hidden" name="sname" value="<?php echo $sname ?>">
+<input type="hidden" name="date" value="<?php echo $date ?>">
+<input type="radio" name="ticket" id="<?php echo $value?>" value = "<?php echo $value?>">
+<?php
+    echo "Час відправлення ". $timetable["departure_time"]. ". Час прибуття ". $timetable["arrival_time"]. "Кількість місць: ".$row["number_of_places"]."<br>";
+    $value += 1;
+}
 
-         }
-      }
+}
+}
 				</xmp>
                 Результат запиту:<br>
                 <img src="./img/lab8/result1.jpg">
@@ -179,26 +179,26 @@ if (!$mysqli->query("INSERT INTO passangers(name, sname, email) VALUES ('$name',
 	Дякуємо за замовлення, <?php echo $_POST["name"] . " " . $_POST["surname"]; ?><br>
     Номер квитка: <?= $var ?><br> Дата: <?php echo $_POST["date"]; ?>
     <?php
-      $mysqli = new mysqli("localhost:3306", "root", "", "ukrabobus_db");
-            $document = $_POST["document_type"];
-            $class_type = $_POST["class_type"];
-            $numbers_of_passangers = $_POST["numbers_of_passangers"];
+$mysqli = new mysqli("localhost:3306", "root", "", "ukrabobus_db");
+$document = $_POST["document_type"];
+$class_type = $_POST["class_type"];
+$numbers_of_passangers = $_POST["numbers_of_passangers"];
 
 
-            $price = 0;
+$price = 0;
 
-            $query1 = "SELECT * FROM types_of_class toc  WHERE toc.id=".$class_type.";";
-            $types_of_class = $mysqli->query($query1);
-            foreach ($types_of_class as $row){
-            $price+=$row['price'];
-            }
-            $price*=$numbers_of_passangers;
+$query1 = "SELECT * FROM types_of_class toc  WHERE toc.id=".$class_type.";";
+$types_of_class = $mysqli->query($query1);
+foreach ($types_of_class as $row){
+    $price+=$row['price'];
+}
+$price*=$numbers_of_passangers;
 
-            $query2 = "SELECT * FROM document_types dt  WHERE dt.id=".$document.";";
-            $document_types = $mysqli->query($query2);
-            foreach ($document_types as $row){
-            $price*=$row['discount'];
-            }
+$query2 = "SELECT * FROM document_types dt  WHERE dt.id=".$document.";";
+$document_types = $mysqli->query($query2);
+foreach ($document_types as $row){
+    $price*=$row['discount'];
+}
 
             echo "<br>Загальна вартість:".$price;
 					</xmp>
@@ -213,12 +213,33 @@ fclose($fd);
 					</xmp>
 					<img src="./img/lab8/note.jpg">
 			</p>
-			<p id="authotization"><b>Авторизація. Сесія.</b>
-			</p>
+			<p id="authotization"><b>Авторизація. Сесія.</b></p>
 
-			<p id="language"><b>Іконки для вибору мови. Кукі.</b>
-
-			</p>
+			<p id="language"><b>Іконки для вибору мови. Кукі.</b></p>
+				Іконки для вибору мови:
+				<xmp>
+<?php
+    $strJsonFileContents = file_get_contents("./res/str.json");
+    $json_data = json_decode($strJsonFileContents, true);
+    $lang = "en";
+    if ($lang == "en") {
+        $str = $json_data["en"];
+    } elseif ($lang == "de") {
+        $str = $json_data["de"];
+    } else {
+        $str = $json_data["ua"];
+    }
+?>
+				</xmp>
+				Результат: <br><img src="./img/lab8/ua.JPG" style="width: 75%;"><img src="./img/lab8/en.JPG" style="width: 75%;"><img src="./img/lab8/de.JPG" style="width: 75%;">
+				<br>Кукі:
+				<xmp>
+<script>
+	function setDe() { document.cookie = "lang=de"; document.location.reload(); }
+	function setEn() { document.cookie = "lang=en"; document.location.reload(); }
+	function setUa() { document.cookie = "lang=ua"; document.location.reload(); }
+</script>
+				</xmp>
 
             <p id="summary"><b>Висновки: </b>Протягом цієї лабораторної роботи ми придбали практичні
                 навички  роботи взаємодії web-застосувань з системою управління базами даних (субд), використання
