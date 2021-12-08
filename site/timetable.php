@@ -77,7 +77,9 @@ $len_surnae = strlen ($surname);
 $len_email = strlen ($email);
 $len_date = strlen ($date);
 
-if($len_name>0 & $len_platform > 0 & $len_surname >0 & $len_email > 0 & $len_date > 0 & $departure != $arrival)
+if($departure == $arrival) {
+	echo "Ви обрали два однакових міста";
+}
 
 if ($mysqli -> connect_errno) {
     echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
@@ -122,6 +124,12 @@ if($departure != $arrival)
          }
       }
 ?>
+<input
+		type="submit"
+		value="<?php echo $str["choose"];?>!"
+		class="btn btn-success"
+		style="font-size: 30px;display: block;margin: 0 auto 10px;width: 885px;"
+		/>
 		</form>
 		
 	</body>
