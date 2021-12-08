@@ -51,7 +51,36 @@
 		<div class="main-content" style="font-size:30px; text-align:center">
 			Дякуємо за замовлення, <?php echo $_POST["name"] . " " . $_POST["surname"]; ?><br>
 			Номер квитка: <?= $var ?><br> Дата: <?php echo $_POST["date"]; ?>
+			<?php
+			$mysqli = new mysqli("localhost:3306", "root", "", "ukrabobus_db");
+            $document = $_POST["document_type"];
+            $class_type = $_POST["class_type"];
+            $numbers_of_passangers = $_POST["numbers_of_passangers"];
+
+
+            $price = 0;
+
+            $query1 = "SELECT * FROM types_of_class toc  WHERE toc.id=".$class_type.";";
+            $types_of_class = $mysqli->query($query1);
+            foreach ($types_of_class as $row){
+            $price+=$row['price'];
+            }
+            $price*=$numbers_of_passangers;
+
+            $query2 = "SELECT * FROM document_types dt  WHERE dt.id=".$document.";";
+            $document_types = $mysqli->query($query2);
+            foreach ($document_types as $row){
+            $price*=$row['discount'];
+            }
+
+            echo "<br>Загальна вартість:".$price;
+
+            $fd = fopen("hello.txt", 'w') or die("не удалось создать файл");
+            $str = "Дякуємо за замовлення, {$_POST['name']} {$_POST['surname']}\nНомер квитка: $var \nДата:  {$_POST['date']} \n
+Загальна вартість:$price";
+            fwrite($fd, $str);
+            fclose($fd);
+			?>
 		</div>
-		
 	</body>
 </html>
