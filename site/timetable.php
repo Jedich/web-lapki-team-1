@@ -92,11 +92,7 @@ if ($mysqli -> connect_errno) {
     exit();
 }
 $sql = "UPDATE timetables SET  date = '{$formattedDate->format(DATE_RFC3339)}' WHERE city_to='$arrival' AND id_transport=".$trip."";
-if ($mysqli->query($sql) === TRUE) {
-  echo "Record updated successfully";
-} else {
-  echo "Error updating record: " . $mysqli->error;
-}
+
 if (!$mysqli->query("INSERT INTO passangers(name, sname, email) VALUES
 ('$name', '$surname', '$email');")){
 echo("Error description:" . $mysqli -> error);
@@ -106,6 +102,30 @@ if (!$mysqli->query("INSERT INTO tickets(id_passanger, number_of_passangers, id_
 ({$mysqli->insert_id}, $numbers_of_passangers, $class_type, $document_type);")){
 echo("Error description:" . $mysqli -> error);
 }
+echo 'Поточний розклад на '.$date.' з міста '.$departure.' до міста '.$arrival.'<br>';
+if($departure != $arrival)
+{
+  if ($mysqli -> connect_errno) {
+             echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+             exit();
+           }
+
+      $query = "SELECT id FROM transports WHERE id_transport_type = ".$trip."";
+         $transports = $mysqli->query($query);
+         foreach ($transports as $row) {
+            $query2 = "SELECT * FROM timetables WHERE id_transport = ". $row["id"]." AND city_from ='$departure' AND city_to ='$arrival'";
+             $timetables = $mysqli->query($query2);
+               foreach ($timetables as $timetable) {
+
+          ?>
+              <input type="radio" name="ticket" id="<?php echo $value?>" value = "<?php echo $value?>">
+              <?php
+                echo "Час відправлення ". $timetable["departure_time"]. ". Час прибуття ". $timetable["arrival_time"]. "<br>";
+            $value += 1;
+          }
+
+         }
+      }
 ?>
 		</form>
 		
