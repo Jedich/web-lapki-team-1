@@ -31,6 +31,23 @@
             });
         });
     </script>
+    <script>
+        $( function() {
+    var select = $( "#numbers_of_passangers" );
+    var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
+      min: 1,
+      max: 5,
+      range: "min",
+      value: select[ 0 ].selectedIndex + 1,
+      slide: function( event, ui ) {
+        select[ 0 ].selectedIndex = ui.value - 1;
+      }
+    });
+    $( "#numbers_of_passangers" ).on( "change", function() {
+      slider.slider( "value", this.selectedIndex + 1 );
+    });
+  } );
+    </script>
 
 
     <style>
@@ -67,31 +84,43 @@
 </nav>
 
 <div class="main-content">
-    <form action="confirm.php" method="post">
+    <form action="timetable.php" method="post">
         <h5>Особисті дані</h5>
         Ім'я: <input style="margin-bottom: 10px" type="text" name="name"> Прізвище: <input type="text" name="surname">
         <br>Електронна пошта: <input id="email" type="email"
                                         title="На введену пошту буде відправлен електронний квиток">
         <h5>Тип документу</h5>
         Виберіть тип документу
-        <select name="type" id="type">
+        <select name="document_type" id="document_type">
             <option selected="selected">Дорослий</option>
             <option>Студентський</option>
             <option>Дитячий</option>
             <option>Пільговий</option>
         </select>
 
-        <h5>Послуги</h5>
-        <fieldset>
-            <input class="input" type="checkbox" name="checkbox-1" id="checkbox-1">
-            <label style="width: 100px" for="checkbox-1">Постіль</label>
-            <input class="input" type="checkbox" name="checkbox-2" id="checkbox-2">
-            <label style="width: 100px" for="checkbox-2">1 напій</label>
-            <input class="input" type="checkbox" name="checkbox-3" id="checkbox-3">
-            <label style="width: 100px" for="checkbox-3">2 напої</label>
-        </fieldset>
+        <h5>Маршрут</h5>
+        Оберіть місто відправлення
+        <select name="departure" id="departure">
+            <option selected="selected">Київ</option>
+            <option>Львів</option>
+            <option>Луцьк</option>
+            <option>Харків</option>
+        </select>
+
+        Оберіть місто прибуття
+        <select name="arrival" id="arrival">
+            <option selected="selected">Київ</option>
+            <option>Львів</option>
+            <option>Луцьк</option>
+            <option>Харків</option>
+        </select>
 
         <h5>Оберіть клас</h5>
+        <input type="radio" name="class_type" id="econom" value="econom">Економ
+        <input type="radio" name="class_type" id="standart" value="standart">Стандарт
+        <input type="radio" name="class_type" id="comfort" value="comfort">Комфорт
+        <br>
+        <h5>Опис класів</h5>
         <div id="tabs">
             <ul>
                 <li><a href="#tabs-1">Економ</a></li>
@@ -131,9 +160,14 @@
         </div>
         <div class="sub-menu">
             <div>
-                <h5 style="margin-bottom: 20px;">Оберіть кількість пасажирів</h5>
-                <div id="slider" style="margin-right: 100px;"></div>
-                <p id="value">0</p>
+                     <label for="numbers_of_passangers">Оберіть кількість пасажирів</label>
+  <select name="numbers_of_passangers" id="numbers_of_passangers">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select>
             </div>
             <div>
                 <h5>Оберіть дату</h5>
