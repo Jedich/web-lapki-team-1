@@ -67,9 +67,9 @@ $arrival = $_POST["arrival"];
 $class_type = $_POST["class_type"];
 $numbers_of_passangers = $_POST["numbers_of_passangers"];
 $date = $_POST["date"];
-$trip = $_GET["trip"];
+$trip = $_POST["trip"];
 
-echo $trip;
+echo "ASDASD". $trip;
 
 $len_name = strlen ($name);
 $len_surname = strlen ($surname);
