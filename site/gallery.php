@@ -16,28 +16,7 @@
   <link rel='stylesheet' href='uniteGallery/dist/themes/default/ug-theme-default.css' type='text/css' />
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" style="padding: 0" href="#">
-            <img
-                    src="logo.svg"
-                    alt=""
-                    width="160"
-                    class="d-inline-block align-text-top"
-            />
-        </a>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <a class="nav-item nav-link" style="font-size: 18pt;" href="./about.html">Про нас</a>
-                <a class="nav-item nav-link" style="font-size: 18pt;" href="#">Придбати квиток</a>
-                <a class="nav-item nav-link" style="font-size: 18pt;" href="./archive.html">Архів</a>
-                <a class="nav-item nav-link active" style="font-size: 18pt;" href="gallery.html">Галерея</a>
-
-            </ul>
-            <div class="time"></div>
-        </div>
-    </div>
-</nav>
+<?php include 'header.php' ?>
 <h2>Photo Gallery</h2>
 <div id="photoGallery" style="display:none;">
 

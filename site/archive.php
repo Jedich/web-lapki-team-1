@@ -17,28 +17,7 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light" >
-		<div class="container-fluid">
-			<a class="navbar-brand" style="padding: 0" href="#">
-				<img
-				src="logo.svg"
-				alt=""
-				width="160"
-				class="d-inline-block align-text-top"
-				/>
-			</a>
-			<div class="collapse navbar-collapse" id="navbarNavDropdown">
-				<ul class="navbar-nav">
-					<a class="nav-item nav-link" style="font-size: 18pt;" href="./about.html">Про нас</a>
-					<a class="nav-item nav-link" style="font-size: 18pt;" href="./index.html">Придбати квиток</a>
-                    <a class="nav-item nav-link active" style="font-size: 18pt;" href="#">Архів</a>
-					<a class="nav-item nav-link" style="font-size: 18pt;" href="gallery.html">Галерея</a>
-					
-				</ul>
-				<div class="time"></div>
-			</div>
-		</div>
-	</nav>
+	<?php include 'header.php' ?>
 	<div class="center">
         <h2>Курси валют:</h2>
         <div id="minfin-informer-m1Fn-currency">Загружаем <a href="https://minfin.com.ua/currency/" target="_blank">курсы валют</a> от minfin.com.ua</a></div><script>var iframe = '<ifra'+'me width="282" height="120" fram'+'eborder="0" src="https://informer.minfin.com.ua/gen/course/?color=grey" vspace="0" scrolling="no" hspace="0" allowtransparency="true"style="width:282px;height:120px;ove'+'rflow:hidden;"></iframe>';var cl = 'minfin-informer-m1Fn-currency';document.getElementById(cl).innerHTML = iframe; </script><noscript><img src="https://informer.minfin.com.ua/gen/img.png" width="1" height="1" alt="minfin.com.ua: курсы валют" title="Курс валют" border="0" /></noscript>

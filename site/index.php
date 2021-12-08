@@ -15,28 +15,7 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="container-fluid">
-			<a class="navbar-brand" style="padding: 0" href="#">
-				<img
-				src="logo.svg"
-				alt=""
-				width="160"
-				class="d-inline-block align-text-top"
-				/>
-			</a>
-			<div class="collapse navbar-collapse" id="navbarNavDropdown">
-				<ul class="navbar-nav">
-					<a class="nav-item nav-link" style="font-size: 18pt;" href="./about.html">Про нас</a>
-					<a class="nav-item nav-link active" style="font-size: 18pt;" href="#">Придбати квиток</a>
-					<a class="nav-item nav-link" style="font-size: 18pt;" href="./archive.html">Архів</a>
-					<a class="nav-item nav-link" style="font-size: 18pt;" href="gallery.html">Галерея</a>
-
-				</ul>
-				<div class="time"></div>
-			</div>
-		</div>
-	</nav>
+	<?php include 'header.php' ?>
 	<h3 style="text-align: center; margin: 20px">Оберіть тип транспорту!</h3>
 	<form action="./approve.php">
 		<table style="margin: auto; margin-bottom: 10px">

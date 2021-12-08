@@ -35,9 +35,9 @@
 				</a>
 				<div class="collapse navbar-collapse" id="navbarNavDropdown">
 					<ul class="navbar-nav">
-						<a class="nav-item nav-link" style="font-size: 18pt;" href="./about.html">Про нас</a>
+						<a class="nav-item nav-link" style="font-size: 18pt;" href="about.php">Про нас</a>
 						<a class="nav-item nav-link active" style="font-size: 18pt;" href="#">Квиток</a>
-						<a class="nav-item nav-link" style="font-size: 18pt;" href="./archive.html">Архів</a>
+						<a class="nav-item nav-link" style="font-size: 18pt;" href="archive.php">Архів</a>
 						<div class="time"></div>
 					</ul>
 					

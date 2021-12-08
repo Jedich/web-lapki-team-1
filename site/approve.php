@@ -59,29 +59,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img
-                    src="logo.svg"
-                    alt=""
-                    width="120"
-                    height="42"
-                    class="d-inline-block align-text-top"
-            />
-            UkrAbobus
-        </a>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <a class="nav-item nav-link" style="font-size: 18pt;" href="./about.html">Про нас</a>
-                <a class="nav-item nav-link active" style="font-size: 18pt;" href="#">Квиток</a>
-                <a class="nav-item nav-link" style="font-size: 18pt;" href="./archive.html">Архів</a>
-                <div class="time"></div>
-            </ul>
-
-        </div>
-    </div>
-</nav>
+<?php include 'header.php' ?>
 <?php 
 $trip = $_GET["trip"];
 ?>
