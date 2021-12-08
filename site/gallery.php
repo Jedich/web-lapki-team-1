@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<?php
+		global $pName;
+		$pName = "gallery";
+	?>
     <meta charset="UTF-8">
     <title>Title</title>
   <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>

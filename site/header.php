@@ -10,10 +10,10 @@
 		</a>
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav">
-				<a class="nav-item nav-link active" style="font-size: 18pt;" href="about.php">Про нас</a>
-				<a class="nav-item nav-link" style="font-size: 18pt;" href="index.php">Придбати квиток</a>
-				<a class="nav-item nav-link" style="font-size: 18pt;" href="archive.php">Архів</a>
-				<a class="nav-item nav-link" style="font-size: 18pt;" href="gallery.php">Галерея</a>
+				<a class="nav-item nav-link <?= ($pName == 'about') ? 'active' : ''; ?>" style="font-size: 18pt;" href="about.php">Про нас</a>
+				<a class="nav-item nav-link <?= ($pName == 'index') ? 'active' : ''; ?>" style="font-size: 18pt;" href="index.php">Придбати квиток</a>
+				<a class="nav-item nav-link <?= ($pName == 'archive') ? 'active' : ''; ?>" style="font-size: 18pt;" href="archive.php">Архів</a>
+				<a class="nav-item nav-link <?= ($pName == 'gallery') ? 'active' : ''; ?>" style="font-size: 18pt;" href="gallery.php">Галерея</a>
 			</ul>
 			<div class="time"></div>
 		</div>

@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<?php
+		global $pName;
+		$pName = "about";
+	?>
 	<title>UkrAbobus</title>
 	<meta charset="utf-8" />
 	<link
