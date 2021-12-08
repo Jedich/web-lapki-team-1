@@ -63,13 +63,13 @@ $formattedDate = new DateTime($date);
 $trip = $_POST["trip"];
 
 if($document=="Дорослий"){
-$document_type = 1;
+    $document_type = 1;
 }elseif($document=="Студентський"){
-$document_type = 3;
+    $document_type = 3;
 }elseif($document=="Дитячий"){
-$document_type = 2;
+    $document_type = 2;
 }elseif($document=="Пільговий"){
-$document_type = 4;
+    $document_type = 4;
 }
 
 $len_name = strlen ($name);
@@ -112,8 +112,11 @@ if($departure != $arrival)
                foreach ($timetables as $timetable) {
 
           ?>
-		  	<input type="hidden" name="name" value="<?php echo $name ?>">
+		  	  <input type="hidden" name="name" value="<?php echo $name ?>">
 			  <input type="hidden" name="sname" value="<?php echo $sname ?>">
+			  <input type="hidden" name="numbers_of_passangers" value="<?php echo $numbers_of_passangers ?>">
+			  <input type="hidden" name="class_type" value="<?php echo $class_type ?>">
+			  <input type="hidden" name="document_type" value="<?php echo $document_type ?>">
 			  <input type="hidden" name="date" value="<?php echo $date ?>">
               <input type="radio" name="ticket" id="<?php echo $value?>" value = "<?php echo $value?>">
               <?php
@@ -124,12 +127,7 @@ if($departure != $arrival)
          }
       }
 ?>
-<input
-		type="submit"
-		value="<?php echo $str["choose"];?>!"
-		class="btn btn-success"
-		style="font-size: 30px;display: block;margin: 0 auto 10px;width: 885px;"
-		/>
+<input type="submit" value="Підтвердити" class="btn btn-success"/>
 		</form>
 		
 	</body>
