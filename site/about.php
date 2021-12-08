@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<?php
+		global $pName;
+		$pName = "about";
+	?>
 	<title>UkrAbobus</title>
 	<meta charset="utf-8" />
 	<link
@@ -16,28 +20,7 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light" >
-		<div class="container-fluid">
-			<a class="navbar-brand" style="padding: 0" href="#">
-				<img
-				src="logo.svg"
-				alt=""
-				width="160"
-				class="d-inline-block align-text-top"
-				/>
-			</a>
-			<div class="collapse navbar-collapse" id="navbarNavDropdown">
-				<ul class="navbar-nav">
-					<a class="nav-item nav-link active" style="font-size: 18pt;" href="#">Про нас</a>
-					<a class="nav-item nav-link" style="font-size: 18pt;" href="./index.html">Придбати квиток</a>
-					<a class="nav-item nav-link" style="font-size: 18pt;" href="./archive.html">Архів</a>
-					<a class="nav-item nav-link" style="font-size: 18pt;" href="gallery.html">Галерея</a>
-
-				</ul>
-				<div class="time"></div>
-			</div>
-		</div>
-	</nav>
+	<?php include 'header.php' ?>
 	<div class="center">
 		<div style="float: left; margin: auto; margin-right: 10px;">
 			<img id="img_about" src="img/desc_pic.jpg"  />
