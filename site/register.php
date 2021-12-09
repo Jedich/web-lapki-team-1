@@ -11,7 +11,7 @@ $isLogin = '';
 if (isset($_POST['reg_user'])) {
 	session_start();
 	$name = $_POST['name'];
-	$sname = $_POST['surname'];
+	$sname = $_POST['sname'];
 	$email = $_POST['email'];
 	$pwd = $_POST['pwd'];
 
@@ -54,21 +54,14 @@ if (isset($_POST['reg_user'])) {
 		}
 	}
 }
-//foreach ($message as $m) {
-//	echo $m;
-//}
 
 function login($mysqli, $user) {
 	$res = $mysqli->query("SELECT * FROM ukrabobus_db.passangers WHERE `e-mail` = '$user->email'") or die(mysqli_error($mysqli));
 	if (mysqli_num_rows($res) != 0) {
-		//echo 'ok';
 		foreach($res as $queryuser) {
-			//echo "{$queryuser['password']} {$user->password}";
 			if($queryuser["password"] !== $user->password) {
 				return "Incorrect input or user does not exist";
 			} else {
-				//$user->name = $queryuser["name"];
-				//$user->surname = $queryuser["sname"];
 				$arr = [];
 				$arr['name'] = $queryuser["name"];
 				$arr['sname'] = $queryuser["sname"];

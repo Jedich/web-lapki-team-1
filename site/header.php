@@ -29,14 +29,16 @@
 				<a class="nav-item nav-link <?= ($pName == 'index') ? 'active' : ''; ?>" style="font-size: 18pt;" href="index.php"><?php echo $str["buy_ticket"];?></a>
 				<a class="nav-item nav-link <?= ($pName == 'archive') ? 'active' : ''; ?>" style="font-size: 18pt;" href="archive.php"><?php echo $str["arch"];?></a>
 				<a class="nav-item nav-link <?= ($pName == 'gallery') ? 'active' : ''; ?>" style="font-size: 18pt;" href="gallery.php"><?php echo $str["gallery"];?></a>
-				<a class="nav-item nav-link" style="font-size: 18pt;" href="#"><?php echo isset($_SESSION['user']) ? $_SESSION['user']['name'] : 'Guest' ;?></a>
+				<a class="nav-item nav-link" style="font-size: 18pt;" href="login_page.php"><?php echo isset($_SESSION['user']) ? $_SESSION['user']['name'] : $str["register"] ?></a>
 				<?php if(isset($_SESSION['user'])): ?>
 					<a href='logout.php'>Logout</a>
 				<?php endif ?>
 			</ul>
-			 <button onclick="setUa()">UA</button>
-			  <button onclick="setEn()">EN</button>
-			   <button onclick="setDe()">DE</button>
+			<div class="flags">
+				<img onclick="setUa()" width="32" style="margin: 2px"  src="./img/ua.svg">
+				<img onclick="setEn()" width="32" style="margin: 2px"  src="./img/us.svg">
+				<img onclick="setDe()" width="32" style="margin: 2px" src="./img/de.svg">
+			</div>
 			   <script>
                function setDe() { document.cookie = "lang=de"; document.location.reload(); }
                function setEn() { document.cookie = "lang=en"; document.location.reload(); }

@@ -42,7 +42,11 @@
     "confirm": "Підтвердити",
     "thanks_for_purch": "Дякуємо за замовлення",
     "ticket_num": "Номер квитка",
-    "data": "Дата"
+    "data": "Дата",
+    "login": "Увійти",
+    "register": "Зареєструватись",
+    "password": "Пароль",
+    "logout": "Вийти"
   },
   "en": {
     "adult": "Adult",
@@ -87,7 +91,11 @@
     "confirm": "Confirm",
     "thanks_for_purch": "Thank you for ordering",
     "ticket_num": "Ticket number",
-    "data": "Date"
+    "data": "Date",
+    "login": "Log in",
+    "register": "Register",
+    "password": "Password",
+    "logout": "Log out"
   },
   "de": {
     "adult": "Erwachsene",
@@ -132,6 +140,10 @@
     "confirm": "Bestätigen",
     "thanks_for_purch": "Vielen Dank für Ihre Bestellung",
     "ticket_num": "Ticketnummer",
-    "data": "Datum"
+    "data": "Datum",
+    "login": "Eintrenten",
+    "register": "Registrieren",
+    "password": "Passwort",
+    "logout": "Ausloggen"
   }
 }

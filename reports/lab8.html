@@ -3,9 +3,13 @@
 	<head>
 		<link rel="stylesheet" href="style.css">
 		<meta charset="utf-8">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="js/index.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	</head>
 	<body>
-		<div class="header"><h1>
+		<div class="header">
+			<h1>
 			ЗВІТИ  З ЛАБОРАТОРНИХ РОБІТ
 			<br>З ДИСЦИПЛІНИ «РОЗРОБЛЕННЯ WEB-ЗАСТОСУВАНЬ»
 		</h1>
@@ -16,7 +20,7 @@
 		Тітов Є. О, <img class="user_photo" align="center" src="img/faces/Egor.jpg">
 		Юдаков О. С. <img class="user_photo" align="center" src="img/faces/Oleksandr.jpg">
 		</h2>
-	</div>
+		</div>
 		<div class="topnav">
 			<a href="lab1.html">Лаб№1</a>
 			<a href="lab2.html">Лаб№2</a>
@@ -27,243 +31,279 @@
 			<a  href="lab7.html">Лаб№7</a>
 			<a class="active" href="lab8.html">Лаб№8</a>
 			<a href="lab9.html">Лаб№9</a>
-		  </div> 
+		</div>
 
-		  
-<div id="primary-content-wrap" class="wrap clearfix">
-    <div class="primary-content">
-        <div class="content">
-            <h2>ЛАБОРАТОРНА РОБОТА №8</h2>
-            <p id="topic_aim">
-                <b>Тема:</b> ІНТЕРФЕЙСИ ВЗАЄМОДІЇ WEB-ЗАСТОСУВАНЬ З СИСТЕМОЮ КЕРУВАННЯ БАЗ ДАНИХ 
-				(СУБД). SQL-ЗАПИТИ У PHP-СЦЕНАРІЯХ. ІНТЕРФЕЙСИ WEB-ЗАСТОСУВАНЬ з СУБД. ВИКОРИСТАННЯ 
-				СЕСІЙ І COOKIES  В СЦЕНАРІЯХ АВТОРИЗАЦІЇ. РОЗРОБКА СЦЕНАРІЇВ ОБРОБКИ ДАНИХ З ФАЙЛІВ.
-            </p>
-            <p>
-                <b>Мета:</b> придбати практичні навички роботи взаємодії WEB- застосувань з СУБД, 
-				використання сесій і cookies  в сценаріях авторизації, розробки сценаріїв обробки 
-				даних з файлів.
-            </p>
-            <p>
-                <b>Розташування лабораторної: </b
-                ><a
-                    href="https://github.com/Jedich/web-lapki-team-1/tree/master/site"
-            >GitHub</a
-            >
-                <a href="https://jedich.github.io/web-lapki-team-1/site/"
-                >Лабораторна робота №8</a
-                >
-            </p>
 
-            <hr/>
+		<div id="primary-content-wrap" class="wrap clearfix">
+			<div class="primary-content content">
+					<h2>ЛАБОРАТОРНА РОБОТА №8</h2>
+					<p id="topic_aim">
+						<b>Тема:</b> ІНТЕРФЕЙСИ ВЗАЄМОДІЇ WEB-ЗАСТОСУВАНЬ З СИСТЕМОЮ КЕРУВАННЯ БАЗ ДАНИХ
+						(СУБД). SQL-ЗАПИТИ У PHP-СЦЕНАРІЯХ. ІНТЕРФЕЙСИ WEB-ЗАСТОСУВАНЬ з СУБД. ВИКОРИСТАННЯ
+						СЕСІЙ І COOKIES  В СЦЕНАРІЯХ АВТОРИЗАЦІЇ. РОЗРОБКА СЦЕНАРІЇВ ОБРОБКИ ДАНИХ З ФАЙЛІВ.
+					</p>
+					<p>
+						<b>Мета:</b> придбати практичні навички роботи взаємодії WEB- застосувань з СУБД,
+						використання сесій і cookies  в сценаріях авторизації, розробки сценаріїв обробки
+						даних з файлів.
+					</p>
+					<p>
+						<b>Розташування лабораторної: </b
+						><a
+							href="https://github.com/Jedich/web-lapki-team-1/tree/master/site"
+					>GitHub</a
+					>
+						<a href="https://jedich.github.io/web-lapki-team-1/site/"
+						>Лабораторна робота №8</a
+						>
+					</p>
 
-            <p id="desc"><b>Опис об'єктів предметної галузі</b></p>
-            Перед початком моделювання баз даних необхідно описати предметну область.<br/>
-            Опис предметної області:
-				<div>
-					База даних створюється для інформаційного обслуговування
-					користувачів сайту подорожей по Україні. БД повинна містити дані про
-					транспорт, їх розклади, та типи транспортів і надавати
-					можливість до швидкого і зручного обрання квитків. Відповідно до
-					предметної області система будується з врахуванням наступних
-					особливостей:
+					<hr/>
+
+					<p id="desc"><b>Опис об'єктів предметної галузі</b></p>
+					Перед початком моделювання баз даних необхідно описати предметну область.<br/>
+					Опис предметної області:
+						<div>
+							База даних створюється для інформаційного обслуговування
+							користувачів сайту подорожей по Україні. БД повинна містити дані про
+							транспорт, їх розклади, та типи транспортів і надавати
+							можливість до швидкого і зручного обрання квитків. Відповідно до
+							предметної області система будується з врахуванням наступних
+							особливостей:
+							<ul>
+							<li>Кожен транспорт має свої три різновиди.</li>
+							<li>Кожен існуючий розклад має містити інформацію про дату прибуття, час прибуття, номер транспорту та кількість пасажирів.</li>
+							<li>Користувач може скористуватись знижкою, якщо має певний статус.</li>
+							</ul>
+							Після аналізу предметної області можна виділити ряд сутностей, і
+							приступити до проектування інфологічної моделі.<br>
+							Виділимо базові сутності цієї предметної області:
+							<ul>
+							<li><b>Розклади.</b> Атрибути розкладів – ID, місто відправлення, місто прибуття, час відправлення, час прибуття, ID транспорту, дата.</li>
+							<li><b>Типи транспортів.</b> Атрибути типів транспорту – ID, тип.</li>
+							<li><b>Транспорти.</b> Атрибути транспортів – ID, ID типу транспорту, кількість місць.</li>
+							<li><b>Квитки.</b> Атрибути квитків – ID, ID пасажирів, ID транспорту, кількість пасажирів, ID типу класу, вартість, ID тип документу.</li>
+							<li><b>Пасажири.</b> Атрибути пасажирів – ID, ім'я, прізвище, електронна пошта, пароль.</li>
+							<li><b>Типи класів.</b> Атрибути типу класів – ID, назва, опис, вартість.</li>
+							<li><b>Типи документів.</b> Атрибути типу документів – ID, назва, знижка.</li>
+							</ul>
+						</div>
+
+					<hr/>
+
+					<p id="infolog"><b>Інфологічна модель</b></p>
+					Для зображення інфологічної моделі побудуємо ER-діаграми з нотаціями
+					Чена/Crow's Foot:
 					<ul>
-					  <li>Кожен транспорт має свої три різновиди.</li>
-					  <li>Кожен існуючий розклад має містити інформацію про дату прибуття, час прибуття, номер транспорту та кількість пасажирів.</li>
-					  <li>Користувач може скористуватись знижкою, якщо має певний статус.</li>
+						<li><b>Інфологічна модель з атрибутами</b></li>
+						<img src="./img/lab8/infolog_attr.jpg" style="width: 75%">
 					</ul>
-					Після аналізу предметної області можна виділити ряд сутностей, і
-					приступити до проектування інфологічної моделі.<br>
-					Виділимо базові сутності цієї предметної області:
+
+					<hr/>
+
+					<p id="datalog"><b>Даталогічна модель</b></p>
+					Після нормалізації до 3НФ було отримано таку даталогічну моделі, побудовану за допомогою MS Access:
+					<img src="./img/lab8/datalog.PNG" style="width: 75%;">
+
+					<hr/>
+
+					<p id="phpmyadmin"><b>Реалізація БД в СУБД MySQL, phpMyAdmin</b></p>
+						<img src="./img/lab8/phpmyadmin.PNG">
+					<hr/>
+
+					<p id="select"><b>Введення, виведення даних БД, пошук даних</b></p>
 					<ul>
-					  <li><b>Розклади.</b> Атрибути розкладів – ID, місто відправлення, місто прибуття, час відправлення, час прибуття, ID транспорту, дата.</li>
-					  <li><b>Типи транспортів.</b> Атрибути типів транспорту – ID, тип.</li>
-					  <li><b>Транспорти.</b> Атрибути транспортів – ID, ID типу транспорту, кількість місць.</li>
-					  <li><b>Квитки.</b> Атрибути квитків – ID, ID пасажирів, ID транспорту, кількість пасажирів, ID типу класу, вартість, ID тип документу.</li>
-					  <li><b>Пасажири.</b> Атрибути пасажирів – ID, ім'я, прізвище, електронна пошта, пароль.</li>
-					  <li><b>Типи класів.</b> Атрибути типу класів – ID, назва, опис, вартість.</li>
-					  <li><b>Типи документів.</b> Атрибути типу документів – ID, назва, знижка.</li>
-					</ul>
-				  </div>
+						Введення даних
+						<xmp>
+		if (!$mysqli->query("INSERT INTO passangers(name, sname, email) VALUES
+		('$name', '$surname', '$email');")){
+		echo("Error description:" . $mysqli -> error);
+		}
 
-            <hr/>
+		if (!$mysqli->query("INSERT INTO tickets(id_passanger, number_of_passangers, id_type, id_document) VALUES
+		({$mysqli->insert_id}, $numbers_of_passangers, $class_type, $document_type);")){
+		echo("Error description:" . $mysqli -> error);
+		}
+	
+						</xmp>
+						Виведення даних
+						<xmp>
+		<div class="main-content" style="font-size:30px; text-align:center">
+			Дякуємо за замовлення, <?php echo $_POST["name"] . " " . $_POST["surname"]; ?><br>
+			Номер квитка: <?= $var ?><br> Дата: <?php echo $_POST["date"]; ?>
+		</div>
+						</xmp>
+						Пошук даних
+						<xmp>
+		echo 'Поточний розклад на '.$date.' з міста '.$departure.' до міста '.$arrival.'<br>';
+		if($departure != $arrival)
+		{
+			if ($mysqli -> connect_errno) {
+				echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+				exit();
+		}
 
-            <p id="infolog"><b>Інфологічна модель</b></p>
-            Для зображення інфологічної моделі побудуємо ER-діаграми з нотаціями
-            Чена/Crow's Foot:
-            <ul>
-                <li><b>Інфологічна модель з атрибутами</b></li>
-                <img src="./img/lab8/infolog_attr.jpg" style="width: 75%">
-            </ul>
+		$query = "SELECT id FROM transports WHERE id_transport_type = ".$trip."";
+		$transports = $mysqli->query($query);
+		foreach ($transports as $row) {
+			$query2 = "SELECT * FROM timetables WHERE id_transport = ". $row["id"]." AND city_from ='$departure' AND city_to ='$arrival'";
+			$timetables = $mysqli->query($query2);
+			foreach ($timetables as $timetable) {
 
-            <hr/>
+		?>
+		<input type="hidden" name="name" value="<?php echo $name ?>">
+		<input type="hidden" name="sname" value="<?php echo $sname ?>">
+		<input type="hidden" name="date" value="<?php echo $date ?>">
+		<input type="radio" name="ticket" id="<?php echo $value?>" value = "<?php echo $value?>">
+		<?php
+			echo "Час відправлення ". $timetable["departure_time"]. ". Час прибуття ". $timetable["arrival_time"]. "Кількість місць: ".$row["number_of_places"]."<br>";
+			$value += 1;
+		}
 
-            <p id="datalog"><b>Даталогічна модель</b></p>
-            Після нормалізації до 3НФ було отримано таку даталогічну моделі, побудовану за допомогою MS Access:
-            <img src="./img/lab8/datalog.PNG" style="width: 75%;">
+		}
+		}
+						</xmp>
+						Результат запиту:<br>
+						<img src="./img/lab8/result1.jpg">
+					</ul><hr/>
+					<p id="sql"><b>SQL-запити на інший функціонал власного сайту. Запис у файл.</b>
+							Запити на оновлення даних:
+							<xmp>
+		if ($mysqli -> connect_errno) {
+			echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+			exit();
+		}
+		$sql = "UPDATE timetables SET  date = '{$formattedDate->format(DATE_RFC3339)}' WHERE city_to='$arrival' AND id_transport=".$trip."";
 
-            <hr/>
+		if (!$mysqli->query("INSERT INTO passangers(name, sname, email) VALUES ('$name', '$surname', '$email');")){
+			echo("Error description:" . $mysqli -> error);
+		}
+							</xmp>
+							<xmp>
+			Дякуємо за замовлення, <?php echo $_POST["name"] . " " . $_POST["surname"]; ?><br>
+			Номер квитка: <?= $var ?><br> Дата: <?php echo $_POST["date"]; ?>
+			<?php
+		$mysqli = new mysqli("localhost:3306", "root", "", "ukrabobus_db");
+		$document = $_POST["document_type"];
+		$class_type = $_POST["class_type"];
+		$numbers_of_passangers = $_POST["numbers_of_passangers"];
 
-            <p id="phpmyadmin"><b>Реалізація БД в СУБД MySQL, phpMyAdmin</b></p>
-                <img src="./img/lab8/phpmyadmin.PNG">
-            <hr/>
 
-            <p id="select"><b>Введення, виведення даних БД, пошук даних</b></p>
-            <ul>
-				Введення даних
-                <xmp>
-if (!$mysqli->query("INSERT INTO passangers(name, sname, email) VALUES
-('$name', '$surname', '$email');")){
-echo("Error description:" . $mysqli -> error);
-}
+		$price = 0;
 
-if (!$mysqli->query("INSERT INTO tickets(id_passanger, number_of_passangers, id_type, id_document) VALUES
-({$mysqli->insert_id}, $numbers_of_passangers, $class_type, $document_type);")){
-echo("Error description:" . $mysqli -> error);
-}
-                </xmp>
-				Виведення даних
-				<xmp>
-<div class="main-content" style="font-size:30px; text-align:center">
-	Дякуємо за замовлення, <?php echo $_POST["name"] . " " . $_POST["surname"]; ?><br>
-	Номер квитка: <?= $var ?><br> Дата: <?php echo $_POST["date"]; ?>
-</div>
-				</xmp>
-				Пошук даних
-				<xmp>
-echo 'Поточний розклад на '.$date.' з міста '.$departure.' до міста '.$arrival.'<br>';
-if($departure != $arrival)
-{
-	if ($mysqli -> connect_errno) {
-		echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-		exit();
-}
+		$query1 = "SELECT * FROM types_of_class toc  WHERE toc.id=".$class_type.";";
+		$types_of_class = $mysqli->query($query1);
+		foreach ($types_of_class as $row){
+			$price+=$row['price'];
+		}
+		$price*=$numbers_of_passangers;
 
-$query = "SELECT id FROM transports WHERE id_transport_type = ".$trip."";
-$transports = $mysqli->query($query);
-foreach ($transports as $row) {
-    $query2 = "SELECT * FROM timetables WHERE id_transport = ". $row["id"]." AND city_from ='$departure' AND city_to ='$arrival'";
-    $timetables = $mysqli->query($query2);
-    foreach ($timetables as $timetable) {
+		$query2 = "SELECT * FROM document_types dt  WHERE dt.id=".$document.";";
+		$document_types = $mysqli->query($query2);
+		foreach ($document_types as $row){
+			$price*=$row['discount'];
+		}
 
-?>
-<input type="hidden" name="name" value="<?php echo $name ?>">
-<input type="hidden" name="sname" value="<?php echo $sname ?>">
-<input type="hidden" name="date" value="<?php echo $date ?>">
-<input type="radio" name="ticket" id="<?php echo $value?>" value = "<?php echo $value?>">
-<?php
-    echo "Час відправлення ". $timetable["departure_time"]. ". Час прибуття ". $timetable["arrival_time"]. "Кількість місць: ".$row["number_of_places"]."<br>";
-    $value += 1;
-}
-
-}
-}
-				</xmp>
-                Результат запиту:<br>
-                <img src="./img/lab8/result1.jpg">
-            </ul>
-			<p id="sql"><b>SQL-запити на інший функціонал власного сайту. Запис у файл.</b>
-					Запити на оновлення даних:
+					echo "<br>Загальна вартість:".$price;
+							</xmp>
+		<img src="./img/lab8/result2.jpg">
+							<br>Запис у файл:
+							<xmp>
+		$fd = fopen("hello.txt", 'w') or die("не удалось создать файл");
+		$str = "Дякуємо за замовлення, {$_POST['name']} {$_POST['surname']}\n Номер квитка: $var \n Дата:  {$_POST['date']} \n
+		Загальна вартість:$price";
+		fwrite($fd, $str);
+		fclose($fd);
+							</xmp>
+							<img src="./img/lab8/note.jpg">
+					</p>
+					<p id="authotization"><b>Авторизація. Сесія.</b></p>
+					<img src="./img/lab8/register.PNG" style="width: 60%;">
 					<xmp>
-if ($mysqli -> connect_errno) {
-	echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-	exit();
-}
-$sql = "UPDATE timetables SET  date = '{$formattedDate->format(DATE_RFC3339)}' WHERE city_to='$arrival' AND id_transport=".$trip."";
-						
-if (!$mysqli->query("INSERT INTO passangers(name, sname, email) VALUES ('$name', '$surname', '$email');")){
-	echo("Error description:" . $mysqli -> error);
-}
+				$res = $mysqli->query("SELECT * FROM ukrabobus_db.passangers WHERE `e-mail` = '$email';") or die(mysqli_error($mysqli));
+				if (mysqli_num_rows($res) == 0) {
+					$mysqli->query("INSERT INTO ukrabobus_db.passangers(name, sname, `e-mail`, password) VALUES ('$name', '$sname', '$email', '$pwd')") or die(mysqli_error($mysqli));
+					$a = login($mysqli, $user);
+					if ($a !== '') {
+						array_push($message, $a);
+					}
+				} else {
+					array_push($message, "User already exists");
+				}
+			}
+		}
+
+		function login($mysqli, $user) {
+			$res = $mysqli->query("SELECT * FROM ukrabobus_db.passangers WHERE `e-mail` = '$user->email'") or die(mysqli_error($mysqli));
+			if (mysqli_num_rows($res) != 0) {
+				foreach($res as $queryuser) {
+					if($queryuser["password"] !== $user->password) {
+						return "Incorrect input or user does not exist";
+					} else {
+						$arr = [];
+						$arr['name'] = $queryuser["name"];
+						$arr['sname'] = $queryuser["sname"];
+						$arr['email'] = $queryuser["e-mail"];
+						$arr['password'] = $queryuser["password"];
+						$_SESSION["user"] = $arr;
+						header("location:index.php");
+						return '';
+					}
+				}
+			} else {
+				return "Incorrect input or user does not exist";
+			}
+		}
 					</xmp>
-					<xmp>
-	Дякуємо за замовлення, <?php echo $_POST["name"] . " " . $_POST["surname"]; ?><br>
-    Номер квитка: <?= $var ?><br> Дата: <?php echo $_POST["date"]; ?>
-    <?php
-$mysqli = new mysqli("localhost:3306", "root", "", "ukrabobus_db");
-$document = $_POST["document_type"];
-$class_type = $_POST["class_type"];
-$numbers_of_passangers = $_POST["numbers_of_passangers"];
+					<p id="language"><b>Іконки для вибору мови. Кукі.</b></p>
+						Іконки для вибору мови:
+						<xmp>
+		<?php
+			$strJsonFileContents = file_get_contents("./res/str.json");
+			$json_data = json_decode($strJsonFileContents, true);
+			$lang = "en";
+			if ($lang == "en") {
+				$str = $json_data["en"];
+			} elseif ($lang == "de") {
+				$str = $json_data["de"];
+			} else {
+				$str = $json_data["ua"];
+			}
+		?>
+						</xmp>
+						Результат: <br><img src="./img/lab8/ua.JPG" style="width: 75%;"><img src="./img/lab8/en.JPG" style="width: 75%;"><img src="./img/lab8/de.JPG" style="width: 75%;">
+						<br>Кукі:
+						<xmp>
+		<script>
+			function setDe() { document.cookie = "lang=de"; document.location.reload(); }
+			function setEn() { document.cookie = "lang=en"; document.location.reload(); }
+			function setUa() { document.cookie = "lang=ua"; document.location.reload(); }
+		</script>
+						</xmp>
 
-
-$price = 0;
-
-$query1 = "SELECT * FROM types_of_class toc  WHERE toc.id=".$class_type.";";
-$types_of_class = $mysqli->query($query1);
-foreach ($types_of_class as $row){
-    $price+=$row['price'];
-}
-$price*=$numbers_of_passangers;
-
-$query2 = "SELECT * FROM document_types dt  WHERE dt.id=".$document.";";
-$document_types = $mysqli->query($query2);
-foreach ($document_types as $row){
-    $price*=$row['discount'];
-}
-
-            echo "<br>Загальна вартість:".$price;
-					</xmp>
-<img src="./img/lab8/result2.jpg">
-					Запис у файл:
-					<xmp>
-$fd = fopen("hello.txt", 'w') or die("не удалось создать файл");
-$str = "Дякуємо за замовлення, {$_POST['name']} {$_POST['surname']}\n Номер квитка: $var \n Дата:  {$_POST['date']} \n
-Загальна вартість:$price";
-fwrite($fd, $str);
-fclose($fd);
-					</xmp>
-					<img src="./img/lab8/note.jpg">
-			</p>
-			<p id="authotization"><b>Авторизація. Сесія.</b></p>
-
-			<p id="language"><b>Іконки для вибору мови. Кукі.</b></p>
-				Іконки для вибору мови:
-				<xmp>
-<?php
-    $strJsonFileContents = file_get_contents("./res/str.json");
-    $json_data = json_decode($strJsonFileContents, true);
-    $lang = "en";
-    if ($lang == "en") {
-        $str = $json_data["en"];
-    } elseif ($lang == "de") {
-        $str = $json_data["de"];
-    } else {
-        $str = $json_data["ua"];
-    }
-?>
-				</xmp>
-				Результат: <br><img src="./img/lab8/ua.JPG" style="width: 75%;"><img src="./img/lab8/en.JPG" style="width: 75%;"><img src="./img/lab8/de.JPG" style="width: 75%;">
-				<br>Кукі:
-				<xmp>
-<script>
-	function setDe() { document.cookie = "lang=de"; document.location.reload(); }
-	function setEn() { document.cookie = "lang=en"; document.location.reload(); }
-	function setUa() { document.cookie = "lang=ua"; document.location.reload(); }
-</script>
-				</xmp>
-
-            <p id="summary"><b>Висновки: </b>Протягом цієї лабораторної роботи ми придбали практичні
-                навички  роботи взаємодії web-застосувань з системою управління базами даних (субд), використання
-				сесій і cookies в сценаріях авторизації, розробки сценаріїв обробки даних з файлів.
-            </p>
-        </div>
-    </div>
-
-    <div class="sidebar">
-        <div class="floating-div">
-            <div class="sidenav">
-                <a href="#topic_aim">Тема, мета та розташування лабораторної</a>
-                <a href="#desc">Опис об'єктів предметної галузі</a>
-                <a href="#infolog">Інфологічна модель</a>
-                <a href="#datalog">Даталогічна модель</a>
-                <a href="#phpmyadmin">Реалізація БД в СУБД MySQL, phpMyAdmin</a>
-                <a href="#select">Введення, виведення даних БД, пошук даних</a>
-				<a href="#sql">SQL-запити на інший функціонал власного сайту. Запис у файл.</a>
-				<a href="#authotization">Авторизація. Сесія.</a>
-				<a href="#language">Іконки для вибору мови. Кукі.</a>
-                <a href="#summary">Висновки</a>
-            </div>
-        </div>
-    </div>
-</div>
+					<p id="summary"><b>Висновки: </b>Протягом цієї лабораторної роботи ми придбали практичні
+						навички  роботи взаємодії web-застосувань з системою управління базами даних (субд), використання
+						сесій і cookies в сценаріях авторизації, розробки сценаріїв обробки даних з файлів.
+					</p>
+				
+			
+		</div>
+		<div class="sidebar">
+			<div class="floating-div">
+				<div class="sidenav">
+					<a href="#topic_aim">Тема, мета та розташування лабораторної</a>
+					<a href="#desc">Опис об'єктів предметної галузі</a>
+					<a href="#infolog">Інфологічна модель</a>
+					<a href="#datalog">Даталогічна модель</a>
+					<a href="#phpmyadmin">Реалізація БД в СУБД MySQL, phpMyAdmin</a>
+					<a href="#select">Введення, виведення даних БД, пошук даних</a>
+					<a href="#sql">SQL-запити на інший функціонал власного сайту. Запис у файл.</a>
+					<a href="#authotization">Авторизація. Сесія.</a>
+					<a href="#language">Іконки для вибору мови. Кукі.</a>
+					<a href="#summary">Висновки</a>
+				</div>
+			</div>
+		</div>
+	</div>
 	</body>
 </html>
