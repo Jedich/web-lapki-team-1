@@ -1,0 +1,15 @@
+body { padding: 50px; font-family: sans-serif; }
+a { color: #fff; font-size: 40px; }
+
+section {
+    width: 800px;
+    margin: 0px auto;
+}
+
+.task {
+    margin-bottom: 20px;
+}
+
+.strikeout {
+    text-decoration: line-through;
+}
