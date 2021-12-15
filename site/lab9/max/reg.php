@@ -16,7 +16,7 @@
       <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 
 
-	<script type="text/javascript" src="../index.js"></script>
+	<script type="text/javascript" src="./index.js"></script>
 </head>
 
 <body>
@@ -27,6 +27,12 @@
         <input type="button" id="go" value="Register" />
     <form>
      <p id="message"></p>
+
+     <style>
+     input {
+        margin: 20px;
+     }
+     </style>
 
 
 

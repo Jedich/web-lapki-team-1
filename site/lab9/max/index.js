@@ -20,7 +20,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: 'POST',
-            url: '../handler.php',
+            url: './handler.php',
             method: 'POST',
             dataType: 'json',
             data: {
@@ -43,7 +43,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: 'POST',
-        url: '../citys.php',
+        url: './citys.php',
         method: 'POST',
         dataType: 'json',
         success: function (response) {

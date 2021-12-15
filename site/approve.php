@@ -42,6 +42,29 @@
             $(".input").checkboxradio({
                 icon: false
             });
+
+            $.ajax({
+                        type: 'POST',
+                        url: './get_cities.php',
+                        method: 'POST',
+                        dataType: 'json',
+                        success: function (response) {
+                            console.log(response);
+                            $.each(response["cities_from"], function (i, item) {
+                                $('#arrival').append($('<option>', {
+                                    value: item,
+                                    text : item
+                                }));
+                            });
+                            $.each(response["cities_to"], function (i, item) {
+                                $('#departure').append($('<option>', {
+                                    value: item,
+                                    text : item
+                                }));
+                            });
+                        }
+                    });
+
         });
     </script>
     <script>
@@ -94,18 +117,12 @@ echo $trip?>
         <h5><?php echo $str["route"];?></h5>
         <?php echo $str["choose_departure"];?>
         <select name="departure" id="departure">
-            <option selected="selected">Київ</option>
-            <option>Львів</option>
-            <option>Луцьк</option>
-            <option>Харків</option>
+
         </select>
 
         <?php echo $str["choose_arrive"];?>
         <select name="arrival" id="arrival">
-            <option selected="selected">Київ</option>
-            <option>Львів</option>
-            <option>Луцьк</option>
-            <option>Харків</option>
+
         </select>
 
         <h5><?php echo $str["choose_class"];?></h5>
