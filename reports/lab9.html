@@ -58,13 +58,48 @@
 				<li><b>Тітов</b></li>
 				Ajax-щоденник<br>
 				<a href="lab9_EGOR/sheduler.html"><img width="800" height="400" src="img/lab9/egor_gavno.JPG"></a>
-
 				<li><b>Юдаков</b></li>
-				Ajax планувальник справ
+				Ajax планувальник справ<br>
+				<a href="../reports/lab9/sanya/sanya_todo.html"><img width="800" height="400" src="img/lab9/adminpage.PNG"></a>
+				<xmp>
+	$.ajax({
+		url: './save.php',
+		method: 'post',
+		dataType: 'json',
+		data: {
+			task: newtask,
+		},
+		success: function(response) {
+			let data = response;
+			if (data["code"] !== undefined && data["code"] != 200) {
+				alert("Error: " + data["msg"]);
+			} else {
+				var task_elem = $('<div>')
+					.append('<input type="checkbox">')
+					.addClass('task')
+					.append(`<span style='font-size: 18pt'> ${newtask.name}</span>`)
+					.append(`<br><small> ${newtask.date} ${newtask.time} </small>`);
+				$('#tasks').append(task_elem);
+				
+				setTimeout(() => {
+					alert(`Task ${newtask.name} expired!`);
+					if(task_elem.hasClass('strikeout')) {
+						task_elem.removeClass('strikeout');
+						task_elem.appendTo($('#tasks'));
+					} else {
+						task_elem.addClass('strikeout');
+						task_elem.appendTo($('#done'));
+					}
+				}, (new Date(newtask.date + ' ' + newtask.time) - new Date()));
+				console.log(JSON.stringify(response));
+			}
+		}
+	});
+				</xmp>
 			</ul>
 			<p id="ajax"><b>AJAX запити у власному сайті</b></p>
-			Перше застосування AJAX запиту у нас використовується на сторінці, там ми динамічно підгружаємо міста.
-			<img width="800" height="400" src="img/lab9/img_1.png">
+			Перше застосування AJAX запиту у нас використовується на сторінці, там ми динамічно підгружаємо міста.<br>
+			<img width="800" height="400" src="img/lab9/img_1.png"><br>
 			Інші наші AJAX запити будуть знаходиится на адмінській сторінці
 			<p id="list"><b>Повний список функціоналу програми</b></p>
 			<p>На кінець 9 лабораторної роботи ми маємо сайт UkrAbobus - застосунок, який дозволяє максимально спростити вашу подорож.<br>
